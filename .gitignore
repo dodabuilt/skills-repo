@@ -2,3 +2,6 @@
 *.pyc
 __pycache__/
 .env
+
+# Packaged skill zips (we only commit extracted folders)
+*.zip
