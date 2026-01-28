@@ -1,61 +1,83 @@
-# Skills Repo
+# AI Skills Repository
 
-AI Skills generated from documentation using [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers). This repository serves as both a skill library and a Claude Code plugin marketplace.
+A curated collection of AI skills that give language models deep knowledge of libraries, frameworks, and tools. Skills are generated from official documentation using [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers).
+
+## What are AI Skills?
+
+AI Skills are structured knowledge packages that help AI assistants (Claude, Cursor, ChatGPT, etc.) understand and work with specific technologies. Each skill contains:
+
+- **SKILL.md** - Quick reference with common patterns and examples
+- **references/** - Comprehensive API documentation and guides
+- **Packaged .zip** - Ready to upload to Claude.ai or other platforms
+
+## Available Skills
+
+| Skill | Description | Version | Category |
+|-------|-------------|---------|----------|
+| [Lightweight Charts](skills/lightweight-charts/) | TradingView financial charting library | 5.1 | Charting |
+
+*More skills coming soon!*
 
 ## Repository Structure
 
 ```
-skills-repo/
-├── .claude-plugin/          # Claude Code plugin manifest
+ai-skills/
+├── .claude-plugin/          # Claude Code plugin configuration
 │   └── plugin.json
-├── skills/                  # Packaged skills (ready to use)
-│   ├── lightweight-charts/  # Skill folder with SKILL.md
-│   │   ├── SKILL.md
-│   │   └── references/
-│   └── *.zip               # Packaged zip files for Claude.ai
-├── work/                   # Working directory (raw scraping)
-│   ├── configs/            # Scraper configurations
-│   └── output/             # Raw scraper output
-├── marketplace.json        # Plugin marketplace manifest
+├── skills/                  # 📦 Ready-to-use skills
+│   ├── <skill-name>/        # Each skill has its own folder
+│   │   ├── SKILL.md         # Quick reference & examples
+│   │   └── references/      # Full documentation
+│   └── <skill-name>.zip     # Packaged for upload
+├── work/                    # 🔧 Working directory
+│   ├── configs/             # Scraper configurations
+│   └── output/              # Raw scraper output
+├── marketplace.json         # Plugin marketplace manifest
 └── README.md
 ```
 
-## Available Skills
-
-### Lightweight Charts
-TradingView Lightweight Charts - A free, lightweight (~45kb), and performant financial charting library for creating interactive stock/crypto charts.
-
-- **Version:** 5.1
-- **Pages scraped:** 248
-- **API coverage:** Functions, Interfaces, Enumerations, Type Aliases, Variables
-
 ## Usage
 
-### As a Claude Code Plugin
+### Option 1: Claude Code Plugin
 
-Install this repo as a Claude Code plugin:
+Load as a Claude Code plugin to get skills automatically:
 
 ```bash
 claude --plugin-dir /path/to/skills-repo
 ```
 
-Or add to your marketplace configuration.
+### Option 2: Upload to Claude.ai
 
-### As Claude.ai Skills
+1. Go to [Claude.ai Skills](https://claude.ai/skills)
+2. Click "Upload Skill"
+3. Select a `.zip` file from `skills/`
 
-Upload the zip files from `skills/` to [Claude.ai Skills](https://claude.ai/skills).
+### Option 3: Copy to Project
 
-### Using Individual Skills
+Copy a skill folder to your project's `.claude/skills/` directory:
 
-Copy the skill folder (e.g., `skills/lightweight-charts/`) to your project's `.claude/skills/` directory.
+```bash
+cp -r skills/lightweight-charts ~/.claude/skills/
+```
+
+### Option 4: Cursor AI
+
+Add skills to your Cursor workspace:
+
+```bash
+cp -r skills/lightweight-charts /path/to/project/.cursor/skills/
+```
 
 ## Creating New Skills
 
-1. Create a config in `work/configs/`:
+### 1. Create a Configuration
+
+Create `work/configs/<skill-name>.json`:
+
 ```json
 {
   "name": "my-skill",
-  "description": "Description here",
+  "description": "Description of the library/framework",
   "base_url": "https://docs.example.com",
   "selectors": {
     "main_content": "article",
@@ -63,29 +85,87 @@ Copy the skill folder (e.g., `skills/lightweight-charts/`) to your project's `.c
     "code_blocks": "pre code"
   },
   "url_patterns": {
-    "include": [],
-    "exclude": []
+    "include": ["/docs"],
+    "exclude": ["/blog", "/old-version"]
   },
-  "max_pages": 100
+  "categories": {
+    "api": ["/api/"],
+    "guides": ["/guide/", "/tutorial/"]
+  },
+  "max_pages": 200,
+  "rate_limit": 0.3
 }
 ```
 
-2. Run the scraper:
+### 2. Scrape Documentation
+
 ```bash
 skill-seekers scrape --config work/configs/my-skill.json
 ```
 
-3. Package the skill:
+### 3. Package the Skill
+
 ```bash
-skill-seekers package work/output/my-skill/
+skill-seekers package work/output/my-skill/ --no-open
 ```
 
-4. Copy to skills folder:
+### 4. Add to Skills Directory
+
 ```bash
 cp work/output/my-skill.zip skills/
 cp -r work/output/my-skill skills/
 ```
 
+### 5. Update Marketplace
+
+Add the new skill to `marketplace.json`:
+
+```json
+{
+  "id": "my-skill",
+  "name": "My Skill Name",
+  "description": "What it does",
+  "version": "1.0",
+  "category": "category-name",
+  "source": "https://docs.example.com",
+  "path": "skills/my-skill"
+}
+```
+
+## Skill Ideas
+
+Want to contribute? Here are some libraries that would make great skills:
+
+**Frontend**
+- React, Vue, Svelte, Angular
+- Tailwind CSS, Shadcn/ui
+- Three.js, D3.js
+
+**Backend**
+- FastAPI, Express, NestJS
+- Prisma, Drizzle, TypeORM
+- tRPC, GraphQL
+
+**DevOps**
+- Docker, Kubernetes
+- Terraform, Pulumi
+- GitHub Actions
+
+**AI/ML**
+- LangChain, LlamaIndex
+- Hugging Face Transformers
+- PyTorch, TensorFlow
+
+## Contributing
+
+1. Fork this repository
+2. Create a skill using the steps above
+3. Submit a pull request
+
 ## License
 
-MIT
+MIT - Feel free to use, modify, and distribute.
+
+---
+
+Built with [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) 🔍

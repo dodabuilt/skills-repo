@@ -1,6 +1,6 @@
 {
-  "name": "skills-repo",
-  "description": "AI Skills generated from documentation - includes TradingView Lightweight Charts and more",
+  "name": "ai-skills",
+  "description": "A collection of AI skills generated from official documentation - giving AI assistants deep knowledge of libraries, frameworks, and tools",
   "version": "1.0.0",
   "author": {
     "name": "dodabuilt"
@@ -10,5 +10,12 @@
     "type": "git",
     "url": "https://github.com/dodabuilt/skills-repo.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "ai-skills",
+    "documentation",
+    "claude",
+    "cursor",
+    "llm"
+  ]
 }
