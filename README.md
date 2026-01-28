@@ -2,6 +2,27 @@
 
 A curated collection of AI skills that give language models deep knowledge of libraries, frameworks, and tools. Skills are generated from official documentation using [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers).
 
+## Table of Contents
+
+- [What are AI Skills?](#what-are-ai-skills)
+- [Available Skills](#available-skills)
+  - [Charting](#charting)
+  - [Frontend](#frontend)
+  - [Backend](#backend)
+  - [DevOps](#devops)
+  - [Databases](#databases)
+  - [AI/ML](#aiml)
+- [Usage](#usage)
+  - [Claude Code Plugin](#option-1-claude-code-plugin)
+  - [Upload to Claude.ai](#option-2-upload-to-claudeai)
+  - [Copy to Project](#option-3-copy-to-project)
+  - [Cursor AI](#option-4-cursor-ai)
+- [Creating New Skills](#creating-new-skills)
+- [Repository Structure](#repository-structure)
+- [Contributing](#contributing)
+
+---
+
 ## What are AI Skills?
 
 AI Skills are structured knowledge packages that help AI assistants (Claude, Cursor, ChatGPT, etc.) understand and work with specific technologies. Each skill contains:
@@ -10,31 +31,47 @@ AI Skills are structured knowledge packages that help AI assistants (Claude, Cur
 - **references/** - Comprehensive API documentation and guides
 - **Packaged .zip** - Ready to upload to Claude.ai or other platforms
 
+---
+
 ## Available Skills
 
-| Skill | Description | Version | Category |
-|-------|-------------|---------|----------|
-| [Lightweight Charts](skills/lightweight-charts/) | TradingView financial charting library | 5.1 | Charting |
+### Charting
 
-*More skills coming soon!*
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| [Lightweight Charts](skills/lightweight-charts/) | TradingView financial charting library for interactive stock, crypto, and forex charts | 5.1 | [Source](https://tradingview.github.io/lightweight-charts/docs) |
 
-## Repository Structure
+### Frontend
 
-```
-ai-skills/
-├── .claude-plugin/          # Claude Code plugin configuration
-│   └── plugin.json
-├── skills/                  # 📦 Ready-to-use skills
-│   ├── <skill-name>/        # Each skill has its own folder
-│   │   ├── SKILL.md         # Quick reference & examples
-│   │   └── references/      # Full documentation
-│   └── <skill-name>.zip     # Packaged for upload
-├── work/                    # 🔧 Working directory
-│   ├── configs/             # Scraper configurations
-│   └── output/              # Raw scraper output
-├── marketplace.json         # Plugin marketplace manifest
-└── README.md
-```
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| *Coming soon* | | | |
+
+### Backend
+
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| *Coming soon* | | | |
+
+### DevOps
+
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| *Coming soon* | | | |
+
+### Databases
+
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| *Coming soon* | | | |
+
+### AI/ML
+
+| Skill | Description | Version | Docs |
+|-------|-------------|---------|------|
+| *Coming soon* | | | |
+
+---
 
 ## Usage
 
@@ -67,6 +104,8 @@ Add skills to your Cursor workspace:
 ```bash
 cp -r skills/lightweight-charts /path/to/project/.cursor/skills/
 ```
+
+---
 
 ## Creating New Skills
 
@@ -116,51 +155,53 @@ cp work/output/my-skill.zip skills/
 cp -r work/output/my-skill skills/
 ```
 
-### 5. Update Marketplace
+### 5. Update Marketplace & README
 
-Add the new skill to `marketplace.json`:
+Add the new skill to `marketplace.json` and update this README.
 
-```json
-{
-  "id": "my-skill",
-  "name": "My Skill Name",
-  "description": "What it does",
-  "version": "1.0",
-  "category": "category-name",
-  "source": "https://docs.example.com",
-  "path": "skills/my-skill"
-}
+---
+
+## Repository Structure
+
 ```
+ai-skills/
+├── .claude-plugin/          # Claude Code plugin configuration
+│   └── plugin.json
+├── skills/                  # 📦 Ready-to-use skills
+│   ├── <skill-name>/        # Each skill has its own folder
+│   │   ├── SKILL.md         # Quick reference & examples
+│   │   └── references/      # Full documentation
+│   └── <skill-name>.zip     # Packaged for upload
+├── work/                    # 🔧 Working directory
+│   ├── configs/             # Scraper configurations
+│   └── output/              # Raw scraper output
+├── marketplace.json         # Plugin marketplace manifest
+└── README.md
+```
+
+---
 
 ## Skill Ideas
 
 Want to contribute? Here are some libraries that would make great skills:
 
-**Frontend**
-- React, Vue, Svelte, Angular
-- Tailwind CSS, Shadcn/ui
-- Three.js, D3.js
+| Category | Libraries |
+|----------|-----------|
+| **Frontend** | React, Vue, Svelte, Angular, Tailwind CSS, Shadcn/ui, Three.js, D3.js |
+| **Backend** | FastAPI, Express, NestJS, Hono, Elysia |
+| **Databases** | Prisma, Drizzle, TypeORM, Supabase |
+| **DevOps** | Docker, Kubernetes, Terraform, GitHub Actions |
+| **AI/ML** | LangChain, LlamaIndex, Hugging Face, Vercel AI SDK |
 
-**Backend**
-- FastAPI, Express, NestJS
-- Prisma, Drizzle, TypeORM
-- tRPC, GraphQL
-
-**DevOps**
-- Docker, Kubernetes
-- Terraform, Pulumi
-- GitHub Actions
-
-**AI/ML**
-- LangChain, LlamaIndex
-- Hugging Face Transformers
-- PyTorch, TensorFlow
+---
 
 ## Contributing
 
 1. Fork this repository
 2. Create a skill using the steps above
 3. Submit a pull request
+
+---
 
 ## License
 
