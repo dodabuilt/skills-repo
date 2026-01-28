@@ -48,7 +48,7 @@ Create a config file in `work/configs/<skill-name>.json`:
     "api": ["/api/"],
     "guides": ["/guide/", "/tutorial/"]
   },
-  "max_pages": 200,
+  "max_pages": 500,
   "rate_limit": 0.3
 }
 ```
@@ -66,7 +66,7 @@ Create a config file in `work/configs/<skill-name>.json`:
 | `url_patterns.include` | URL patterns to include | `["/docs", "/api"]` |
 | `url_patterns.exclude` | URL patterns to skip | `["/blog", "/old-version"]` |
 | `categories` | Group pages by URL pattern | `{"api": ["/api/"]}` |
-| `max_pages` | Maximum pages to scrape | `200` |
+| `max_pages` | Maximum pages to scrape | `500` |
 | `rate_limit` | Seconds between requests | `0.3` |
 
 ### Common Selectors by Framework
@@ -222,7 +222,7 @@ skill-seekers config
 
 ## Tips
 
-1. **Start small** - Set `max_pages: 50` first to test selectors
+1. **Go big** - Set `max_pages: 500` to capture comprehensive documentation
 2. **Exclude old versions** - Add `/v1/`, `/v2/` etc. to exclude patterns
 3. **Check the site** - Inspect the docs site to find the right selectors
 4. **Review output** - Always review and enhance the auto-generated SKILL.md
