@@ -1,0 +1,12 @@
+{
+  "name": "dodabuilt-skills-repo",
+  "description": "IBKR engineering skills for Claude Code - Ratio UI, TanStack Query, Lightweight Charts",
+  "plugins": [
+    {
+      "name": "ibkr-engineering-skills",
+      "description": "Complete IBKR frontend development skill set - Ratio UI, semantic tokens, PrimeVue, Fluidity, TanStack Query, IBFonts",
+      "version": "1.0.0",
+      "path": "."
+    }
+  ]
+}

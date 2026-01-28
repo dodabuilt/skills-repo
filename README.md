@@ -1,96 +1,96 @@
-# IBKR Engineering Skills
+# IBKR Engineering Skills Plugin
 
-A curated skill set for AI-assisted IBKR frontend development with **Claude Code**. These skills constrain Claude to use **only** the approved design system, components, and patterns.
+A Claude Code plugin with curated skills for IBKR frontend development. These skills constrain Claude to use **only** the approved design system, components, and patterns.
 
-## What's Included
+## Skills Included
 
-| Skill | Purpose |
-|-------|---------|
-| **ibkr-development** | Core skill - Ratio UI, semantic tokens, PrimeVue, Fluidity, IBFonts |
-| **tanstack-query-vue** | Data fetching with TanStack Query (Vue 3 Composition API) |
-| **lightweight-charts** | TradingView charting library integration |
+| Skill | Triggers On |
+|-------|-------------|
+| **ibkr-development** | Ratio UI, PrimeVue, IBKR, trading UI, semantic tokens, Fluidity, microfrontends |
+| **tanstack-query-vue** | useQuery, useMutation, TanStack Query, Vue Query, server state |
+| **lightweight-charts** | Candlestick charts, TradingView, financial charts |
 
 ## Installation
 
-### Option 1: Global Installation (All Projects)
+### Option 1: Add as Marketplace (Recommended)
 
-Install as a Claude Code plugin for all your projects:
+Add this repo as a marketplace, then install the plugin:
 
 ```bash
-# Clone to your Claude plugins directory
-git clone https://github.com/dodabuilt/skills-repo.git ~/.claude/plugins/ibkr-skills
+# In Claude Code, run:
+/plugin marketplace add dodabuilt/skills-repo
+
+# Then install the plugin:
+/plugin install ibkr-engineering-skills@dodabuilt-skills-repo
 ```
 
-The plugin is now available globally. Claude Code will automatically discover and use these skills.
-
-### Option 2: Per-Project Installation
-
-Add skills to a specific project:
+### Option 2: Direct Install from GitHub
 
 ```bash
-# From your project root
-mkdir -p .claude/skills
-git clone https://github.com/dodabuilt/skills-repo.git .claude/skills/ibkr
+/plugin install dodabuilt/skills-repo
 ```
 
-Or add as a git submodule:
-```bash
-git submodule add https://github.com/dodabuilt/skills-repo.git .claude/skills/ibkr
-```
+### Option 3: Local Development/Testing
 
-### Option 3: Symlink (Best for Development)
+Clone and load directly with `--plugin-dir`:
 
 ```bash
-# Clone once
+# Clone the repo
 git clone https://github.com/dodabuilt/skills-repo.git ~/skills-repo
 
-# Symlink to Claude plugins
-ln -s ~/skills-repo ~/.claude/plugins/ibkr-skills
+# Start Claude Code with the plugin loaded
+claude --plugin-dir ~/skills-repo
+```
 
-# Or symlink to a specific project
-ln -s ~/skills-repo/.claude/skills/ibkr /path/to/project/.claude/skills/ibkr
+### Option 4: Per-Project Installation
+
+Add to a specific project's `.claude/settings.json`:
+
+```json
+{
+  "extraKnownMarketplaces": ["dodabuilt/skills-repo"],
+  "enabledPlugins": ["ibkr-engineering-skills@dodabuilt-skills-repo"]
+}
 ```
 
 ## Verify Installation
 
-After installing, run Claude Code and ask:
+After installing, run in Claude Code:
+
 ```
-What skills do you have available for IBKR development?
+/plugin
 ```
 
-Claude should list the installed skills.
+Go to the **Installed** tab - you should see `ibkr-engineering-skills`.
+
+Or test with:
+```
+What IBKR development skills do you have?
+```
 
 ## Usage
 
-Once installed, Claude will automatically use these skills when you:
+Once installed, Claude automatically uses these skills when relevant. Skills are namespaced:
 
-- Ask to build UI components
-- Work with Ratio UI or PrimeVue
-- Implement Figma designs
-- Fetch data from APIs
-- Create charts or data visualizations
-
-### Trigger Keywords
-
-The skills activate on mentions of:
-- `Ratio`, `PrimeVue`, `IBKR`, `trading UI`
-- `semantic tokens`, `design system`
-- `Fluidity`, `microfrontend`
-- `useQuery`, `useMutation`, `TanStack Query`
-- `lightweight-charts`, `candlestick`
+```bash
+# Invoke directly (optional - Claude uses them automatically)
+/ibkr-engineering-skills:ibkr-development
+/ibkr-engineering-skills:tanstack-query-vue
+/ibkr-engineering-skills:lightweight-charts
+```
 
 ### Example Prompts
 
 ```
-Build a positions table using Ratio UI that fetches data from /api/positions
+Build a positions table with buy/sell buttons using Ratio UI
 ```
 
 ```
-Create a trading card component with buy/sell buttons following the IBKR design system
+Fetch portfolio data using TanStack Query and display in a DataTable
 ```
 
 ```
-Implement this Figma design using our component library
+Create a candlestick chart for AAPL with volume histogram
 ```
 
 ## What the Skills Enforce
@@ -98,7 +98,7 @@ Implement this Figma design using our component library
 ### Always Use
 - Semantic color tokens (`bg-surface`, `text-on-surface`, `border-accent`)
 - PrimeVue components with Ratio presets
-- TanStack Query for all data fetching
+- TanStack Query for all data fetching (`useQuery`, `useMutation`)
 - IBFonts for icons (`ibi-*` classes)
 - Ratio UI composables (`useDevice`, `useLocale`, `useNum`, etc.)
 
@@ -109,31 +109,34 @@ Implement this Figma design using our component library
 - Manual `fetch()` + `ref()` patterns
 - Custom components when PrimeVue/Ratio has one
 
-## Updating Skills
+## Updating
 
 ```bash
-cd ~/.claude/plugins/ibkr-skills  # or wherever you cloned
-git pull origin main
+# If using marketplace:
+/plugin marketplace update dodabuilt-skills-repo
+
+# If using local clone:
+cd ~/skills-repo && git pull
 ```
 
-## Skill Structure
+## Plugin Structure
 
 ```
 skills-repo/
 ├── .claude-plugin/
-│   └── plugin.json                 # Plugin manifest
+│   └── plugin.json              # Plugin manifest
 ├── skills/
 │   ├── ibkr-development/
-│   │   ├── SKILL.md                # Main skill file
+│   │   ├── SKILL.md             # Main skill
 │   │   └── references/
-│   │       ├── semantic-tokens.md  # All color tokens
-│   │       ├── ratio-components.md # Component reference
-│   │       ├── fluidity-patterns.md# Microfrontend patterns
-│   │       └── ibfonts.md          # Icon library
+│   │       ├── semantic-tokens.md
+│   │       ├── ratio-components.md
+│   │       ├── fluidity-patterns.md
+│   │       └── ibfonts.md
 │   ├── tanstack-query-vue/
 │   │   ├── SKILL.md
 │   │   └── references/
-│   │       └── api.md              # Full API reference
+│   │       └── api.md
 │   └── lightweight-charts/
 │       ├── SKILL.md
 │       └── references/
@@ -143,10 +146,8 @@ skills-repo/
 
 ## Contributing
 
-To add or update skills:
-
 1. Edit the relevant `SKILL.md` or reference files
-2. Test with Claude Code to verify the skill activates correctly
+2. Test locally with `claude --plugin-dir ./skills-repo`
 3. Submit a PR
 
 ## License
