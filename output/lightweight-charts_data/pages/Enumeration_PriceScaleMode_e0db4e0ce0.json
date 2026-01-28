@@ -1,0 +1,58 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+  "title": "Enumeration: PriceScaleMode",
+  "content": "Represents the price scale mode.\n\nPrice scale shows prices. Price range changes linearly.\n\nPrice scale shows prices. Price range changes logarithmically.\n\nPrice scale shows percentage values according the first visible value of the price scale. The first visible value is 0% in this mode.\n\nThe same as percentage mode, but the first value is moved to 100.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Enumeration: PriceScaleMode",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Enumeration Members​",
+      "id": "enumeration-members"
+    },
+    {
+      "level": "h3",
+      "text": "Normal​",
+      "id": "normal"
+    },
+    {
+      "level": "h3",
+      "text": "Logarithmic​",
+      "id": "logarithmic"
+    },
+    {
+      "level": "h3",
+      "text": "Percentage​",
+      "id": "percentage"
+    },
+    {
+      "level": "h3",
+      "text": "IndexedTo100​",
+      "id": "indexedto100"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

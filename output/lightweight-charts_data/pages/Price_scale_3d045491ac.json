@@ -1,0 +1,49 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+  "title": "Price scale",
+  "content": "The price scale (or price axis) is a vertical scale that maps prices to coordinates and vice versa. The conversion rules depend on the price scale mode, the chart's height, and the visible part of the data.\n\nBy default, a chart has two visible price scales: left and right. Additionally, you can create an unlimited number of overlay price scales, which remain hidden in the UI. Overlay price scales allow series to be plotted without affecting the existing visible scales. This is particularly useful for indicators like Volume, where values can differ significantly from price data.\n\nTo create an overlay price scale, assign priceScaleId to a series. Note that the priceScaleId value should differ from price scale IDs on the left and right. The chart will create an overlay price scale with the provided ID.\n\nIf a price scale with such ID already exists, a series will be attached to the existing price scale. Further, you can use the provided price scale ID to retrieve its API object using the IChartApi.priceScale method.\n\nSee the Price and Volume article for an example of adding a Volume indicator using an overlay price scale.\n\nTo modify the left price scale, use the leftPriceScale option. For the right price scale, use rightPriceScale. To change the default settings for an overlay price scale, use the overlayPriceScales option.\n\nYou can use the IChartApi.priceScale method to retrieve the API object for any price scale. Similarly, to access the API object for the price scale that a series is attached to, use the ISeriesApi.priceScale method.\n\nThe default left and right price scales cannot be removed, you can only hide them by setting the visible option to false.\n\nAn overlay price scale exists as long as at least one series is attached to it. To remove an overlay price scale, remove all series attached to this price scale.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Price scale",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Create price scale​",
+      "id": "create-price-scale"
+    },
+    {
+      "level": "h2",
+      "text": "Modify price scale​",
+      "id": "modify-price-scale"
+    },
+    {
+      "level": "h2",
+      "text": "Remove price scale​",
+      "id": "remove-price-scale"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions"
+  ]
+}

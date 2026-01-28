@@ -1,0 +1,92 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+  "title": "Function: createSeriesMarkers()",
+  "content": "createSeriesMarkers<HorzScaleItem>(series, markers?, options?): ISeriesMarkersPluginApi<HorzScaleItem>\n\nA function to create a series markers primitive.\n\n• series: ISeriesApi<keyof SeriesOptionsMap, HorzScaleItem, AreaData<HorzScaleItem> | WhitespaceData<HorzScaleItem> | BarData<HorzScaleItem> | CandlestickData<HorzScaleItem> | BaselineData<HorzScaleItem> | LineData<HorzScaleItem> | HistogramData<HorzScaleItem> | CustomData<HorzScaleItem> | CustomSeriesWhitespaceData<HorzScaleItem>, CustomSeriesOptions | AreaSeriesOptions | BarSeriesOptions | CandlestickSeriesOptions | BaselineSeriesOptions | LineSeriesOptions | HistogramSeriesOptions, DeepPartial <AreaStyleOptions & SeriesOptionsCommon> | DeepPartial <BarStyleOptions & SeriesOptionsCommon> | DeepPartial <CandlestickStyleOptions & SeriesOptionsCommon> | DeepPartial <BaselineStyleOptions & SeriesOptionsCommon> | DeepPartial <LineStyleOptions & SeriesOptionsCommon> | DeepPartial <HistogramStyleOptions & SeriesOptionsCommon> | DeepPartial <CustomStyleOptions & SeriesOptionsCommon>>\n\nThe series to which the primitive will be attached.\n\n• markers?: SeriesMarker<HorzScaleItem>[]\n\nAn array of markers to be displayed on the series.\n\n• options?: DeepPartial <SeriesMarkersOptions>\n\nOptions for the series markers plugin.\n\nISeriesMarkersPluginApi<HorzScaleItem>",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: createSeriesMarkers()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h2",
+      "text": "Example​",
+      "id": "example"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "import { createSeriesMarkers } from 'lightweight-charts';    const seriesMarkers = createSeriesMarkers(        series,        [            {                color: 'green',                position: 'inBar',                shape: 'arrowDown',                time: 1556880900,            },        ]    ); // and then you can modify the markers // set it to empty array to remove all markers seriesMarkers.setMarkers([]); // `seriesMarkers.markers()` returns current markers",
+      "language": "sql"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AreaSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CandlestickSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaselineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HistogramSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarker",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+  "title": "Function: createOptionsChart()",
+  "content": "createOptionsChart(container, options?): IChartApiBase<number>\n\nCreates an 'options' chart with price values on the horizontal scale.\n\nThis function is used to create a specialized chart type where the horizontal scale represents price values instead of time. It's particularly useful for visualizing option chains, price distributions, or any data where price is the primary x-axis metric.\n\n• container: string | HTMLElement\n\nThe DOM element or its id where the chart will be rendered.\n\n• options?: DeepPartial <PriceChartOptions>\n\nOptional configuration options for the price chart.\n\nIChartApiBase<number>\n\nAn instance of IChartApiBase configured for price-based horizontal scaling.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: createOptionsChart()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions"
+  ]
+}

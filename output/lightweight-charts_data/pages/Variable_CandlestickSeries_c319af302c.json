@@ -1,0 +1,34 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/CandlestickSeries",
+  "title": "Variable: CandlestickSeries",
+  "content": "const CandlestickSeries: SeriesDefinition<\"Candlestick\">",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Variable: CandlestickSeries",
+      "id": ""
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/CandlestickSeries",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/BarSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/BaselineSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/HistogramSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/LineSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/customSeriesDefaultOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition"
+  ]
+}

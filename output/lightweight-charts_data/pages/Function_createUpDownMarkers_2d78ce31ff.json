@@ -1,0 +1,91 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+  "title": "Function: createUpDownMarkers()",
+  "content": "createUpDownMarkers<T>(series, options?): ISeriesUpDownMarkerPluginApi<T>\n\nCreates and attaches the Series Up Down Markers Plugin.\n\n• series: ISeriesApi<keyof SeriesOptionsMap, T, AreaData<T> | WhitespaceData<T> | BarData<T> | CandlestickData<T> | BaselineData<T> | LineData<T> | HistogramData<T> | CustomData<T> | CustomSeriesWhitespaceData<T>, CustomSeriesOptions | AreaSeriesOptions | BarSeriesOptions | CandlestickSeriesOptions | BaselineSeriesOptions | LineSeriesOptions | HistogramSeriesOptions, DeepPartial <AreaStyleOptions & SeriesOptionsCommon> | DeepPartial <BarStyleOptions & SeriesOptionsCommon> | DeepPartial <CandlestickStyleOptions & SeriesOptionsCommon> | DeepPartial <BaselineStyleOptions & SeriesOptionsCommon> | DeepPartial <LineStyleOptions & SeriesOptionsCommon> | DeepPartial <HistogramStyleOptions & SeriesOptionsCommon> | DeepPartial <CustomStyleOptions & SeriesOptionsCommon>>\n\nSeries to which attach the Up Down Markers Plugin\n\n• options?: Partial <UpDownMarkersPluginOptions>\n\noptions for the Up Down Markers Plugin\n\nISeriesUpDownMarkerPluginApi<T>\n\nApi for Series Up Down Marker Plugin. ISeriesUpDownMarkerPluginApi",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: createUpDownMarkers()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h2",
+      "text": "Example​",
+      "id": "example"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "import { createUpDownMarkers, createChart, LineSeries } from 'lightweight-charts';const chart = createChart('container');const lineSeries = chart.addSeries(LineSeries);const upDownMarkers = createUpDownMarkers(lineSeries, {    positiveColor: '#22AB94',    negativeColor: '#F7525F',    updateVisibilityDuration: 5000,});// to add some dataupDownMarkers.setData(    [        { time: '2020-02-02', value: 12.34 },        //... more line series data    ]);// ... Update some valuesupDownMarkers.update({ time: '2020-02-02', value: 13.54 }, true);// to remove plugin from the seriesupDownMarkers.detach();",
+      "language": "sql"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AreaSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CandlestickSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaselineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HistogramSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions"
+  ]
+}

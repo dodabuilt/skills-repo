@@ -1,0 +1,407 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions",
+  "title": "Interface: HorzScaleOptions",
+  "content": "Options for the time scale; the horizontal scale at the bottom of the chart that displays the time of data.\n\nThe margin space in bars from the right side of the chart.\n\noptional rightOffsetPixels: number\n\nThe margin space in pixels from the right side of the chart. This option has priority over rightOffset.\n\nThe space between bars in pixels.\n\nminBarSpacing: number\n\nThe minimum space between bars in pixels.\n\nmaxBarSpacing: number\n\nThe maximum space between bars in pixels.\n\nHas no effect if value is set to 0.\n\nPrevent scrolling to the left of the first bar.\n\nfixRightEdge: boolean\n\nPrevent scrolling to the right of the most recent bar.\n\nlockVisibleTimeRangeOnResize: boolean\n\nPrevent changing the visible time range during chart resizing.\n\nrightBarStaysOnScroll: boolean\n\nPrevent the hovered bar from moving when scrolling.\n\nborderVisible: boolean\n\nShow the time scale border.\n\nThe time scale border color.\n\nShow the time, not just the date, in the time scale and vertical crosshair label.\n\nsecondsVisible: boolean\n\nShow seconds in the time scale and vertical crosshair label in hh:mm:ss format for intraday data.\n\nshiftVisibleRangeOnNewBar: boolean\n\nShift the visible range to the right (into the future) by the number of new bars when new data is added.\n\nNote that this only applies when the last bar is visible.\n\nallowShiftVisibleRangeOnWhitespaceReplacement: boolean\n\nAllow the visible range to be shifted to the right when a new bar is added which is replacing an existing whitespace time point on the chart.\n\nNote that this only applies when the last bar is visible & shiftVisibleRangeOnNewBar is enabled.\n\nticksVisible: boolean\n\nDraw small vertical line on time axis labels.\n\noptional tickMarkMaxCharacterLength: number\n\nMaximum tick mark label length. Used to override the default 8 character maximum length.\n\nuniformDistribution: boolean\n\nChanges horizontal scale marks generation. With this flag equal to true, marks of the same weight are either all drawn or none are drawn at all.\n\nminimumHeight: number\n\nDefine a minimum height for the time scale. Note: This value will be exceeded if the time scale needs more space to display it's contents.\n\nSetting a minimum height could be useful for ensuring that multiple charts positioned in a horizontal stack each have an identical time scale height, or for plugins which require a bit more space within the time scale pane.\n\nallowBoldLabels: boolean\n\nAllow major time scale labels to be rendered in a bolder font weight.\n\nignoreWhitespaceIndices: boolean\n\nIgnore time scale points containing only whitespace (for all series) when drawing grid lines, tick marks, and snapping the crosshair to time scale points.\n\nFor the yield curve chart type it defaults to true.\n\nenableConflation: boolean\n\nEnable data conflation for performance optimization when bar spacing is very small. When enabled, multiple data points are automatically combined into single points when they would be rendered in less than 0.5 pixels of screen space. This significantly improves rendering performance for large datasets when zoomed out.\n\noptional conflationThresholdFactor: number\n\nSmoothing factor for conflation thresholds. Controls how aggressively conflation is applied. This can be used to create smoother-looking charts, especially useful for sparklines and small charts.\n\nHigher values result in fewer data points being displayed, creating smoother but less detailed charts. This is particularly useful for sparklines and small charts where smooth appearance is prioritized over showing every data point.\n\nNote: Should be used with continuous series types (line, area, baseline) for best visual results. Candlestick and bar series may look less natural with high smoothing factors.\n\nprecomputeConflationOnInit: boolean\n\nPrecompute conflation chunks for common levels right after data load. When enabled, the system will precompute conflation data in the background, which improves performance when zooming out but increases initial load time and memory usage.\n\nRecommended for: Large datasets (>10K points) on machines with sufficient memory\n\nprecomputeConflationPriority: \"background\" | \"user-visible\" | \"user-blocking\"\n\nPriority used for background precompute tasks when the Prioritized Task Scheduling API is available.\n\nRecommendation: Use 'background' for most cases to avoid impacting user experience. Only use higher priorities if conflation is critical for your application's functionality.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Interface: HorzScaleOptions",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Extended by​",
+      "id": "extended-by"
+    },
+    {
+      "level": "h2",
+      "text": "Properties​",
+      "id": "properties"
+    },
+    {
+      "level": "h3",
+      "text": "rightOffset​",
+      "id": "rightoffset"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value"
+    },
+    {
+      "level": "h3",
+      "text": "rightOffsetPixels?​",
+      "id": "rightoffsetpixels"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-1"
+    },
+    {
+      "level": "h3",
+      "text": "barSpacing​",
+      "id": "barspacing"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-2"
+    },
+    {
+      "level": "h3",
+      "text": "minBarSpacing​",
+      "id": "minbarspacing"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-3"
+    },
+    {
+      "level": "h3",
+      "text": "maxBarSpacing​",
+      "id": "maxbarspacing"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-4"
+    },
+    {
+      "level": "h3",
+      "text": "fixLeftEdge​",
+      "id": "fixleftedge"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-5"
+    },
+    {
+      "level": "h3",
+      "text": "fixRightEdge​",
+      "id": "fixrightedge"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-6"
+    },
+    {
+      "level": "h3",
+      "text": "lockVisibleTimeRangeOnResize​",
+      "id": "lockvisibletimerangeonresize"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-7"
+    },
+    {
+      "level": "h3",
+      "text": "rightBarStaysOnScroll​",
+      "id": "rightbarstaysonscroll"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-8"
+    },
+    {
+      "level": "h3",
+      "text": "borderVisible​",
+      "id": "bordervisible"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-9"
+    },
+    {
+      "level": "h3",
+      "text": "borderColor​",
+      "id": "bordercolor"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-10"
+    },
+    {
+      "level": "h3",
+      "text": "visible​",
+      "id": "visible"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-11"
+    },
+    {
+      "level": "h3",
+      "text": "timeVisible​",
+      "id": "timevisible"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-12"
+    },
+    {
+      "level": "h3",
+      "text": "secondsVisible​",
+      "id": "secondsvisible"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-13"
+    },
+    {
+      "level": "h3",
+      "text": "shiftVisibleRangeOnNewBar​",
+      "id": "shiftvisiblerangeonnewbar"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-14"
+    },
+    {
+      "level": "h3",
+      "text": "allowShiftVisibleRangeOnWhitespaceReplacement​",
+      "id": "allowshiftvisiblerangeonwhitespacereplacement"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-15"
+    },
+    {
+      "level": "h3",
+      "text": "ticksVisible​",
+      "id": "ticksvisible"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-16"
+    },
+    {
+      "level": "h3",
+      "text": "tickMarkMaxCharacterLength?​",
+      "id": "tickmarkmaxcharacterlength"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-17"
+    },
+    {
+      "level": "h3",
+      "text": "uniformDistribution​",
+      "id": "uniformdistribution"
+    },
+    {
+      "level": "h3",
+      "text": "minimumHeight​",
+      "id": "minimumheight"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-18"
+    },
+    {
+      "level": "h3",
+      "text": "allowBoldLabels​",
+      "id": "allowboldlabels"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-19"
+    },
+    {
+      "level": "h3",
+      "text": "ignoreWhitespaceIndices​",
+      "id": "ignorewhitespaceindices"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-20"
+    },
+    {
+      "level": "h3",
+      "text": "enableConflation​",
+      "id": "enableconflation"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-21"
+    },
+    {
+      "level": "h3",
+      "text": "conflationThresholdFactor?​",
+      "id": "conflationthresholdfactor"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-22"
+    },
+    {
+      "level": "h3",
+      "text": "precomputeConflationOnInit​",
+      "id": "precomputeconflationoninit"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-23"
+    },
+    {
+      "level": "h3",
+      "text": "precomputeConflationPriority​",
+      "id": "precomputeconflationpriority"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value-24"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "'background'",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Interface: HorzScaleOptions Options for the time scale; the horizontal scale at the bottom of the chart that displays the time of data. Extended by​ TimeScaleOptions Properties​ rightOffset​ rightOffset: number The margin space in bars from the right side of the chart. Default Value​ 0 rightOffsetPixels?​ optional rightOffsetPixels: number The margin space in pixels from the right side of the chart. This option has priority over rightOffset. Default Value​ undefined barSpacing​ barSpacing: number The space between bars in pixels. Default Value​ 6 minBarSpacing​ minBarSpacing: number The minimum space between bars in pixels. Default Value​ 0.5 maxBarSpacing​ maxBarSpacing: number The maximum space between bars in pixels. Has no effect if value is set to 0. Default Value​ 0 fixLeftEdge​ fixLeftEdge: boolean Prevent scrolling to the left of the first bar. Default Value​ false fixRightEdge​ fixRightEdge: boolean Prevent scrolling to the right of the most recent bar. Default Value​ false lockVisibleTimeRangeOnResize​ lockVisibleTimeRangeOnResize: boolean Prevent changing the visible time range during chart resizing. Default Value​ false rightBarStaysOnScroll​ rightBarStaysOnScroll: boolean Prevent the hovered bar from moving when scrolling. Default Value​ false borderVisible​ borderVisible: boolean Show the time scale border. Default Value​ true borderColor​ borderColor: string The time scale border color. Default Value​ '#2B2B43' visible​ visible: boolean Show the time scale. Default Value​ true timeVisible​ timeVisible: boolean Show the time, not just the date, in the time scale and vertical crosshair label. Default Value​ false secondsVisible​ secondsVisible: boolean Show seconds in the time scale and vertical crosshair label in hh:mm:ss format for intraday data. Default Value​ true shiftVisibleRangeOnNewBar​ shiftVisibleRangeOnNewBar: boolean Shift the visible range to the right (into the future) by the number of new bars when new data is added. Note that this only applies when the last bar is visible. Default Value​ true allowShiftVisibleRangeOnWhitespaceReplacement​ allowShiftVisibleRangeOnWhitespaceReplacement: boolean Allow the visible range to be shifted to the right when a new bar is added which is replacing an existing whitespace time point on the chart. Note that this only applies when the last bar is visible & shiftVisibleRangeOnNewBar is enabled. Default Value​ false ticksVisible​ ticksVisible: boolean Draw small vertical line on time axis labels. Default Value​ false tickMarkMaxCharacterLength?​ optional tickMarkMaxCharacterLength: number Maximum tick mark label length. Used to override the default 8 character maximum length. Default Value​ undefined uniformDistribution​ uniformDistribution: boolean Changes horizontal scale marks generation. With this flag equal to true, marks of the same weight are either all drawn or none are drawn at all. minimumHeight​ minimumHeight: number Define a minimum height for the time scale. Note: This value will be exceeded if the time scale needs more space to display it's contents. Setting a minimum height could be useful for ensuring that multiple charts positioned in a horizontal stack each have an identical time scale height, or for plugins which require a bit more space within the time scale pane. Default Value​ 0 allowBoldLabels​ allowBoldLabels: boolean Allow major time scale labels to be rendered in a bolder font weight. Default Value​ true ignoreWhitespaceIndices​ ignoreWhitespaceIndices: boolean Ignore time scale points containing only whitespace (for all series) when drawing grid lines, tick marks, and snapping the crosshair to time scale points. For the yield curve chart type it defaults to true. Default Value​ false enableConflation​ enableConflation: boolean Enable data conflation for performance optimization when bar spacing is very small. When enabled, multiple data points are automatically combined into single points when they would be rendered in less than 0.5 pixels of screen space. This significantly improves rendering performance for large datasets when zoomed out. Default Value​ false conflationThresholdFactor?​ optional conflationThresholdFactor: number Smoothing factor for conflation thresholds. Controls how aggressively conflation is applied. This can be used to create smoother-looking charts, especially useful for sparklines and small charts. 1.0 = conflate only when display can't show detail (default, performance-focused) 2.0 = conflate at 2x the display threshold (moderate smoothing) 4.0 = conflate at 4x the display threshold (strong smoothing) 8.0+ = very aggressive smoothing for very small charts Higher values result in fewer data points being displayed, creating smoother but less detailed charts. This is particularly useful for sparklines and small charts where smooth appearance is prioritized over showing every data point. Note: Should be used with continuous series types (line, area, baseline) for best visual results. Candlestick and bar series may look less natural with high smoothing factors. Default Value​ 1.0 precomputeConflationOnInit​ precomputeConflationOnInit: boolean Precompute conflation chunks for common levels right after data load. When enabled, the system will precompute conflation data in the background, which improves performance when zooming out but increases initial load time and memory usage. Performance impact: Initial load: +100-500ms depending on dataset size Memory usage: +20-50% of original dataset size Zoom performance: Significant improvement (10-100x faster) Recommended for: Large datasets (>10K points) on machines with sufficient memory Default Value​ false precomputeConflationPriority​ precomputeConflationPriority: \"background\" | \"user-visible\" | \"user-blocking\" Priority used for background precompute tasks when the Prioritized Task Scheduling API is available. Options: 'background': Lowest priority, tasks run only when the browser is idle 'user-visible': Medium priority, tasks run when they might affect visible content 'user-blocking': Highest priority, tasks run immediately and may block user interaction Recommendation: Use 'background' for most cases to avoid impacting user experience. Only use higher priorities if conflation is critical for your application's functionality. Default Value​ 'background'",
+      "code": "TimeScaleOptions"
+    }
+  ],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoscaleInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisDoubleClickOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisPressedMouseMoveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarsInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaseValuePrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsImpl",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomBarItemData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomConflationContext",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/DrawingUtils",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceFormatter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceLine",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveAxisView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IYieldCurveChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ImageWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/KineticScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithoutData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/OhlcData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneRendererCustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneSize",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/Point",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartLocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatBuiltIn",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatCustom",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PrimitiveHoveredItem",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDataItemTypeMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBar",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerPrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesPartialOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesStyleOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesUpDownMarker",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SingleValueData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SolidColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TickMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScalePoint",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TouchMouseEventData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TrackingModeOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/VerticalGradientColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

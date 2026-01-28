@@ -1,0 +1,520 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+  "title": "Interface: ITimeScaleApi<HorzScaleItem>",
+  "content": "Interface to chart time scale\n\nscrollPosition(): number\n\nReturn the distance from the right edge of the time scale to the lastest bar of the series measured in bars.\n\nscrollToPosition(position, animated): void\n\nScrolls the chart to the specified position.\n\nSetting this to true makes the chart scrolling smooth and adds animation\n\nscrollToRealTime(): void\n\nRestores default scroll position of the chart. This process is always animated.\n\ngetVisibleRange(): IRange<HorzScaleItem>\n\nReturns current visible time range of the chart.\n\nNote that this method cannot extrapolate time and will use the only currently existent data. To get complete information about current visible range, please use getVisibleLogicalRange and ISeriesApi.barsInLogicalRange.\n\nIRange<HorzScaleItem>\n\nVisible range or null if the chart has no data at all.\n\nsetVisibleRange(range): void\n\nSets visible range of data.\n\nNote that this method cannot extrapolate time and will use the only currently existent data. Thus, for example, if currently a chart doesn't have data prior 2018-01-01 date and you set visible range with from date 2016-01-01, it will be automatically adjusted to 2018-01-01 (and the same for to date).\n\nBut if you can approximate indexes on your own - you could use setVisibleLogicalRange instead.\n\n• range: IRange<HorzScaleItem>\n\nTarget visible range of data.\n\ngetVisibleLogicalRange(): LogicalRange\n\nReturns the current visible logical range of the chart as an object with the first and last time points of the logical range, or returns null if the chart has no data.\n\nVisible range or null if the chart has no data at all.\n\nsetVisibleLogicalRange(range): void\n\nSets visible logical range of data.\n\n• range: IRange<number>\n\nTarget visible logical range of data.\n\nresetTimeScale(): void\n\nRestores default zoom level and scroll position of the time scale.\n\nAutomatically calculates the visible range to fit all data from all series.\n\nlogicalToCoordinate(logical): Coordinate\n\nConverts a logical index to local x coordinate.\n\nLogical index needs to be converted\n\nx coordinate of that time or null if the chart doesn't have data\n\ncoordinateToLogical(x): Logical\n\nConverts a coordinate to logical index.\n\nCoordinate needs to be converted\n\nLogical index that is located on that coordinate or null if the chart doesn't have data\n\ntimeToIndex(time, findNearest?): TimePointIndex\n\nConverts a time to local x coordinate.\n\n• time: HorzScaleItem\n\nTime needs to be converted\n\n• findNearest?: boolean\n\nX coordinate of that time or null if no time found on time scale\n\ntimeToCoordinate(time): Coordinate\n\nConverts a time to local x coordinate.\n\n• time: HorzScaleItem\n\nTime needs to be converted\n\nX coordinate of that time or null if no time found on time scale\n\ncoordinateToTime(x): HorzScaleItem\n\nConverts a coordinate to time.\n\nCoordinate needs to be converted.\n\nTime of a bar that is located on that coordinate or null if there are no bars found on that coordinate.\n\nReturns a width of the time scale.\n\nReturns a height of the time scale.\n\nsubscribeVisibleTimeRangeChange(handler): void\n\nSubscribe to the visible time range change events.\n\nThe argument passed to the handler function is an object with from and to properties of type Time, or null if there is no visible data.\n\n• handler: TimeRangeChangeEventHandler<HorzScaleItem>\n\nHandler (function) to be called when the visible indexes change.\n\nunsubscribeVisibleTimeRangeChange(handler): void\n\nUnsubscribe a handler that was previously subscribed using subscribeVisibleTimeRangeChange.\n\n• handler: TimeRangeChangeEventHandler<HorzScaleItem>\n\nPreviously subscribed handler\n\nsubscribeVisibleLogicalRangeChange(handler): void\n\nSubscribe to the visible logical range change events.\n\nThe argument passed to the handler function is an object with from and to properties of type number, or null if there is no visible data.\n\n• handler: LogicalRangeChangeEventHandler\n\nHandler (function) to be called when the visible indexes change.\n\nunsubscribeVisibleLogicalRangeChange(handler): void\n\nUnsubscribe a handler that was previously subscribed using subscribeVisibleLogicalRangeChange.\n\n• handler: LogicalRangeChangeEventHandler\n\nPreviously subscribed handler\n\nsubscribeSizeChange(handler): void\n\nAdds a subscription to time scale size changes\n\n• handler: SizeChangeEventHandler\n\nHandler (function) to be called when the time scale size changes\n\nunsubscribeSizeChange(handler): void\n\nRemoves a subscription to time scale size changes\n\n• handler: SizeChangeEventHandler\n\nPreviously subscribed handler\n\napplyOptions(options): void\n\nApplies new options to the time scale.\n\n• options: DeepPartial <HorzScaleOptions>\n\nAny subset of options.\n\noptions(): Readonly <HorzScaleOptions>\n\nReturns current options\n\nReadonly <HorzScaleOptions>\n\nCurrently applied options",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Interface: ITimeScaleApi<HorzScaleItem>",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Methods​",
+      "id": "methods"
+    },
+    {
+      "level": "h3",
+      "text": "scrollPosition()​",
+      "id": "scrollposition"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h3",
+      "text": "scrollToPosition()​",
+      "id": "scrolltoposition"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-1"
+    },
+    {
+      "level": "h3",
+      "text": "scrollToRealTime()​",
+      "id": "scrolltorealtime"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-2"
+    },
+    {
+      "level": "h3",
+      "text": "getVisibleRange()​",
+      "id": "getvisiblerange"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-3"
+    },
+    {
+      "level": "h3",
+      "text": "setVisibleRange()​",
+      "id": "setvisiblerange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-1"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-4"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example"
+    },
+    {
+      "level": "h3",
+      "text": "getVisibleLogicalRange()​",
+      "id": "getvisiblelogicalrange"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-5"
+    },
+    {
+      "level": "h3",
+      "text": "setVisibleLogicalRange()​",
+      "id": "setvisiblelogicalrange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-2"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-6"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-1"
+    },
+    {
+      "level": "h3",
+      "text": "resetTimeScale()​",
+      "id": "resettimescale"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-7"
+    },
+    {
+      "level": "h3",
+      "text": "fitContent()​",
+      "id": "fitcontent"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-8"
+    },
+    {
+      "level": "h3",
+      "text": "logicalToCoordinate()​",
+      "id": "logicaltocoordinate"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-3"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-9"
+    },
+    {
+      "level": "h3",
+      "text": "coordinateToLogical()​",
+      "id": "coordinatetological"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-4"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-10"
+    },
+    {
+      "level": "h3",
+      "text": "timeToIndex()​",
+      "id": "timetoindex"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-5"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-11"
+    },
+    {
+      "level": "h3",
+      "text": "timeToCoordinate()​",
+      "id": "timetocoordinate"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-6"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-12"
+    },
+    {
+      "level": "h3",
+      "text": "coordinateToTime()​",
+      "id": "coordinatetotime"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-7"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-13"
+    },
+    {
+      "level": "h3",
+      "text": "width()​",
+      "id": "width"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-14"
+    },
+    {
+      "level": "h3",
+      "text": "height()​",
+      "id": "height"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-15"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeVisibleTimeRangeChange()​",
+      "id": "subscribevisibletimerangechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-8"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-16"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-2"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeVisibleTimeRangeChange()​",
+      "id": "unsubscribevisibletimerangechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-9"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-17"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-3"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeVisibleLogicalRangeChange()​",
+      "id": "subscribevisiblelogicalrangechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-10"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-18"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-4"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeVisibleLogicalRangeChange()​",
+      "id": "unsubscribevisiblelogicalrangechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-11"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-19"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-5"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeSizeChange()​",
+      "id": "subscribesizechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-12"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-20"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeSizeChange()​",
+      "id": "unsubscribesizechange"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-13"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-21"
+    },
+    {
+      "level": "h3",
+      "text": "applyOptions()​",
+      "id": "applyoptions"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-14"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-22"
+    },
+    {
+      "level": "h3",
+      "text": "options()​",
+      "id": "options"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-23"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "chart.timeScale().setVisibleRange({    from: (new Date(Date.UTC(2018, 0, 1, 0, 0, 0, 0))).getTime() / 1000,    to: (new Date(Date.UTC(2018, 1, 1, 0, 0, 0, 0))).getTime() / 1000,});",
+      "language": "css"
+    },
+    {
+      "code": "chart.timeScale().setVisibleLogicalRange({ from: 0, to: 10 });",
+      "language": "css"
+    },
+    {
+      "code": "function myVisibleTimeRangeChangeHandler(newVisibleTimeRange) {    if (newVisibleTimeRange === null) {        // handle null    }    // handle new logical range}chart.timeScale().subscribeVisibleTimeRangeChange(myVisibleTimeRangeChangeHandler);",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.timeScale().unsubscribeVisibleTimeRangeChange(myVisibleTimeRangeChangeHandler);",
+      "language": "unknown"
+    },
+    {
+      "code": "function myVisibleLogicalRangeChangeHandler(newVisibleLogicalRange) {    if (newVisibleLogicalRange === null) {        // handle null    }    // handle new logical range}chart.timeScale().subscribeVisibleLogicalRangeChange(myVisibleLogicalRangeChangeHandler);",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.timeScale().unsubscribeVisibleLogicalRangeChange(myVisibleLogicalRangeChangeHandler);",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoscaleInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisDoubleClickOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisPressedMouseMoveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarsInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaseValuePrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsImpl",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomBarItemData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomConflationContext",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/DrawingUtils",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceFormatter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceLine",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveAxisView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IYieldCurveChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ImageWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/KineticScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithoutData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/OhlcData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneRendererCustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneSize",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/Point",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartLocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatBuiltIn",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatCustom",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PrimitiveHoveredItem",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDataItemTypeMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBar",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerPrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesPartialOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesStyleOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesUpDownMarker",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SingleValueData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SolidColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TickMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScalePoint",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TouchMouseEventData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TrackingModeOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/VerticalGradientColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LogicalRange",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Coordinate",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Logical",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimePointIndex",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Time",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimeRangeChangeEventHandler",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LogicalRangeChangeEventHandler",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SizeChangeEventHandler",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial"
+  ]
+}

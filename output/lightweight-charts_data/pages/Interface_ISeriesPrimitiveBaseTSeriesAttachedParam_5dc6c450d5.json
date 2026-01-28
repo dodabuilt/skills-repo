@@ -1,0 +1,258 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase",
+  "title": "Interface: ISeriesPrimitiveBase<TSeriesAttachedParameters>",
+  "content": "Base interface for series primitives. It must be implemented to add some external graphics to series\n\n• TSeriesAttachedParameters = unknown\n\noptional updateAllViews(): void\n\nThis method is called when viewport has been changed, so primitive have to recalculate / invalidate its data\n\noptional priceAxisViews(): readonly ISeriesPrimitiveAxisView[]\n\nReturns array of labels to be drawn on the price axis used by the series\n\nreadonly ISeriesPrimitiveAxisView[]\n\narray of objects; each of then must implement ISeriesPrimitiveAxisView interface\n\nFor performance reasons, the lightweight library uses internal caches based on references to arrays So, this method must return new array if set of views has changed and should try to return the same array if nothing changed\n\noptional timeAxisViews(): readonly ISeriesPrimitiveAxisView[]\n\nReturns array of labels to be drawn on the time axis\n\nreadonly ISeriesPrimitiveAxisView[]\n\narray of objects; each of then must implement ISeriesPrimitiveAxisView interface\n\nFor performance reasons, the lightweight library uses internal caches based on references to arrays So, this method must return new array if set of views has changed and should try to return the same array if nothing changed\n\noptional paneViews(): readonly IPrimitivePaneView[]\n\nReturns array of objects representing primitive in the main area of the chart\n\nreadonly IPrimitivePaneView[]\n\narray of objects; each of then must implement ISeriesPrimitivePaneView interface\n\nFor performance reasons, the lightweight library uses internal caches based on references to arrays So, this method must return new array if set of views has changed and should try to return the same array if nothing changed\n\noptional priceAxisPaneViews(): readonly IPrimitivePaneView[]\n\nReturns array of objects representing primitive in the price axis area of the chart\n\nreadonly IPrimitivePaneView[]\n\narray of objects; each of then must implement ISeriesPrimitivePaneView interface\n\nFor performance reasons, the lightweight library uses internal caches based on references to arrays So, this method must return new array if set of views has changed and should try to return the same array if nothing changed\n\noptional timeAxisPaneViews(): readonly IPrimitivePaneView[]\n\nReturns array of objects representing primitive in the time axis area of the chart\n\nreadonly IPrimitivePaneView[]\n\narray of objects; each of then must implement ISeriesPrimitivePaneView interface\n\nFor performance reasons, the lightweight library uses internal caches based on references to arrays So, this method must return new array if set of views has changed and should try to return the same array if nothing changed\n\noptional autoscaleInfo(startTimePoint, endTimePoint): AutoscaleInfo\n\nReturn autoscaleInfo which will be merged with the series base autoscaleInfo. You can use this to expand the autoscale range to include visual elements drawn outside of the series' current visible price range.\n\nImportant: Please note that this method will be evoked very often during scrolling and zooming of the chart, thus it is recommended that this method is either simple to execute, or makes use of optimisations such as caching to ensure that the chart remains responsive.\n\n• startTimePoint: Logical\n\nstart time point for the current visible range\n\n• endTimePoint: Logical\n\nend time point for the current visible range\n\noptional attached(param): void\n\nAttached Lifecycle hook.\n\n• param: TSeriesAttachedParameters\n\nAn object containing useful references for the attached primitive to use.\n\noptional detached(): void\n\nDetached Lifecycle hook.\n\noptional hitTest(x, y): PrimitiveHoveredItem\n\nHit test method which will be called by the library when the cursor is moved. Use this to register object ids being hovered for use within the crosshairMoved and click events emitted by the chart. Additionally, the hit test result can specify a preferred cursor type to display for the main chart pane. This method should return the top most hit for this primitive if more than one object is being intersected.\n\nx Coordinate of mouse event\n\ny Coordinate of mouse event",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Interface: ISeriesPrimitiveBase<TSeriesAttachedParameters>",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Methods​",
+      "id": "methods"
+    },
+    {
+      "level": "h3",
+      "text": "updateAllViews()?​",
+      "id": "updateallviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h3",
+      "text": "priceAxisViews()?​",
+      "id": "priceaxisviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-1"
+    },
+    {
+      "level": "h3",
+      "text": "timeAxisViews()?​",
+      "id": "timeaxisviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-2"
+    },
+    {
+      "level": "h3",
+      "text": "paneViews()?​",
+      "id": "paneviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-3"
+    },
+    {
+      "level": "h3",
+      "text": "priceAxisPaneViews()?​",
+      "id": "priceaxispaneviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-4"
+    },
+    {
+      "level": "h3",
+      "text": "timeAxisPaneViews()?​",
+      "id": "timeaxispaneviews"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-5"
+    },
+    {
+      "level": "h3",
+      "text": "autoscaleInfo()?​",
+      "id": "autoscaleinfo"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-6"
+    },
+    {
+      "level": "h3",
+      "text": "attached()?​",
+      "id": "attached"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-1"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-7"
+    },
+    {
+      "level": "h3",
+      "text": "detached()?​",
+      "id": "detached"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-8"
+    },
+    {
+      "level": "h3",
+      "text": "hitTest()?​",
+      "id": "hittest"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-2"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-9"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoscaleInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisDoubleClickOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisPressedMouseMoveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarsInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaseValuePrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsImpl",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomBarItemData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomConflationContext",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/DrawingUtils",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceFormatter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceLine",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveAxisView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IYieldCurveChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ImageWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/KineticScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithoutData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/OhlcData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneRendererCustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneSize",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/Point",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartLocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatBuiltIn",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatCustom",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PrimitiveHoveredItem",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDataItemTypeMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBar",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerPrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesPartialOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesStyleOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesUpDownMarker",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SingleValueData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SolidColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TickMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScalePoint",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TouchMouseEventData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TrackingModeOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/VerticalGradientColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Logical"
+  ]
+}

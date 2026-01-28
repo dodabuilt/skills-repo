@@ -1,0 +1,46 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+  "title": "Function: isBusinessDay()",
+  "content": "isBusinessDay(time): time is BusinessDay\n\nCheck if a time value is a business day object.\n\ntrue if time is a BusinessDay object, false otherwise.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: isBusinessDay()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Time",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay"
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v4-to-v5",
+  "title": "From v4 to v5",
+  "content": "In this document you can find the migration guide from the previous version v4 to v5.\n\nReplace all series creation calls with the new addSeries syntax. Here's how the migration works for each series type:\n\nHere's how to migrate each series type:\n\nUMD (Universal Module Definition):\n\nNote: Make sure to import the specific series type (e.g., LineSeries, AreaSeries) along with createChart when using ES Modules. For UMD builds, all series types are available under the LightweightCharts namespace.\n\nIf your application doesn't use markers, you can now benefit from a smaller bundle size as this functionality is no longer included in the core package.\n\nIn the new version of Lightweight Charts, the watermark feature has undergone significant changes:\n\nThe TextWatermark plugin is now available as follows:\n\nThe options structure for watermarks has been revised:\n\nTo use the plugin, you need pass a pane object to the createTextWatermark function. The pane object specifies where the watermark should be attached:\n\nHere's a comprehensive example demonstrating how to implement a text watermark in the new version:\n\nSome of the plugin types and interfaces have been renamed due to the additional of Pane Primitives.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "From v4 to v5",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Table of Contents​",
+      "id": "table-of-contents"
+    },
+    {
+      "level": "h2",
+      "text": "Series changes​",
+      "id": "series-changes"
+    },
+    {
+      "level": "h3",
+      "text": "Overview of Changes​",
+      "id": "overview-changes-series"
+    },
+    {
+      "level": "h3",
+      "text": "Migration Steps​",
+      "id": "migration-steps-series"
+    },
+    {
+      "level": "h4",
+      "text": "Before (v4)​",
+      "id": "v4-series"
+    },
+    {
+      "level": "h4",
+      "text": "After (v5)​",
+      "id": "v5-series"
+    },
+    {
+      "level": "h4",
+      "text": "Migration Reference​",
+      "id": "migration-reference-series"
+    },
+    {
+      "level": "h3",
+      "text": "Usage Examples​",
+      "id": "usage-examples-series"
+    },
+    {
+      "level": "h2",
+      "text": "Series Markers​",
+      "id": "series-markers"
+    },
+    {
+      "level": "h3",
+      "text": "Overview of Changes​",
+      "id": "overview-changes-markers"
+    },
+    {
+      "level": "h3",
+      "text": "Migration Steps​",
+      "id": "migration-steps-markers"
+    },
+    {
+      "level": "h4",
+      "text": "Before (v4)​",
+      "id": "v4-markers"
+    },
+    {
+      "level": "h4",
+      "text": "After (v5)​",
+      "id": "v5-markers"
+    },
+    {
+      "level": "h3",
+      "text": "Key Changes​",
+      "id": "key-changes-markers"
+    },
+    {
+      "level": "h2",
+      "text": "Watermarks​",
+      "id": "watermarks"
+    },
+    {
+      "level": "h3",
+      "text": "Overview of Changes​",
+      "id": "overview-changes-watermarks"
+    },
+    {
+      "level": "h3",
+      "text": "Migration Steps​",
+      "id": "migration-steps-watermarks"
+    },
+    {
+      "level": "h4",
+      "text": "Before (v4)​",
+      "id": "v4-watermarks"
+    },
+    {
+      "level": "h4",
+      "text": "After (v5)​",
+      "id": "v5-watermarks"
+    },
+    {
+      "level": "h3",
+      "text": "Accessing the New TextWatermark​",
+      "id": "accessing-the-new-textwatermark"
+    },
+    {
+      "level": "h3",
+      "text": "Changes in Options​",
+      "id": "changes-in-options"
+    },
+    {
+      "level": "h3",
+      "text": "Attaching the Watermark​",
+      "id": "attaching-the-watermark"
+    },
+    {
+      "level": "h3",
+      "text": "Example: Implementing a Text Watermark​",
+      "id": "example-implementing-a-text-watermark"
+    },
+    {
+      "level": "h2",
+      "text": "Plugin Typings​",
+      "id": "plugin-typings"
+    },
+    {
+      "level": "h3",
+      "text": "Overview of Changes​",
+      "id": "overview-changes-plugins"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "// Example with Line Series in v4import { createChart } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addLineSeries({ color: 'red' });",
+      "language": "sql"
+    },
+    {
+      "code": "// Example with Line Series in v5import { createChart, LineSeries } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addSeries(LineSeries, { color: 'red' });",
+      "language": "sql"
+    },
+    {
+      "code": "import { createChart, LineSeries } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addSeries(LineSeries, { color: 'red' });",
+      "language": "sql"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container, {});const lineSeries = chart.addSeries(LightweightCharts.LineSeries, { color: 'red' });",
+      "language": "css"
+    },
+    {
+      "code": "// Markers were directly managed through the series instanceseries.setMarkers([    {        time: '2019-04-09',        position: 'aboveBar',        color: 'black',        shape: 'arrowDown',    },]);// Getting markersconst markers = series.markers();",
+      "language": "javascript"
+    },
+    {
+      "code": "// Import the markers primitiveimport { createSeriesMarkers } from 'lightweight-charts';// Create a markers primitive instanceconst seriesMarkers = createSeriesMarkers(series, [    {        time: '2019-04-09',        position: 'aboveBar',        color: 'black',        shape: 'arrowDown',    },]);// Getting markersconst markers = seriesMarkers.markers();// Updating markersseriesMarkers.setMarkers([/* new markers */]);// Remove all markersseriesMarkers.setMarkers([]);",
+      "language": "javascript"
+    },
+    {
+      "code": "const chart = createChart(container, {    watermark: {        text: 'Watermark Text',        color: 'rgba(255,0,0,0.5)',    },});",
+      "language": "css"
+    },
+    {
+      "code": "import { createChart, createTextWatermark } from 'lightweight-charts';const chart = createChart(container, options);const firstPane = chart.panes()[0];createTextWatermark(firstPane, {    horzAlign: 'center',    vertAlign: 'center',    lines: [{        text: 'Watermark Text',        color: 'rgba(255,0,0,0.5)',        fontSize: 50,    }],});",
+      "language": "sql"
+    },
+    {
+      "code": "const chart = createChart(container, options);const mainSeries = chart.addSeries(LineSeries);mainSeries.setData(generateData());const firstPane = chart.panes()[0];createTextWatermark(firstPane, {    horzAlign: 'center',    vertAlign: 'center',    lines: [        {            text: 'Hello',            color: 'rgba(255,0,0,0.5)',            fontSize: 100,            fontStyle: 'bold',        },        {            text: 'This is a text watermark',            color: 'rgba(0,0,255,0.5)',            fontSize: 50,            fontStyle: 'italic',            fontFamily: 'monospace',        },    ],});",
+      "language": "css"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "From v4 to v5 In this document you can find the migration guide from the previous version v4 to v5. Table of Contents​ Series changes Series Markers Watermarks Plugin Typings Series changes​ Overview of Changes​ Unified series creation API using single addSeries function Better tree-shaking support Individual series types must now be imported separately (for ESM) Migration Steps​ Replace all series creation calls with the new addSeries syntax. Here's how the migration works for each series type: Before (v4)​ // Example with Line Series in v4import { createChart } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addLineSeries({ color: 'red' }); After (v5)​ // Example with Line Series in v5import { createChart, LineSeries } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addSeries(LineSeries, { color: 'red' }); Migration Reference​ Here's how to migrate each series type: v4 Methodv5 Methodchart.addLineSeries(options)chart.addSeries(LineSeries, options)chart.addAreaSeries(options)chart.addSeries(AreaSeries, options)chart.addBarSeries(options)chart.addSeries(BarSeries, options)chart.addBaselineSeries(options)chart.addSeries(BaselineSeries, options)chart.addCandlestickSeries(options)chart.addSeries(CandlestickSeries, options)chart.addHistogramSeries(options)chart.addSeries(HistogramSeries, options) Usage Examples​ ESM (ES Modules): import { createChart, LineSeries } from 'lightweight-charts';const chart = createChart(container, {});const lineSeries = chart.addSeries(LineSeries, { color: 'red' }); UMD (Universal Module Definition): const chart = LightweightCharts.createChart(container, {});const lineSeries = chart.addSeries(LightweightCharts.LineSeries, { color: 'red' }); Note: Make sure to import the specific series type (e.g., LineSeries, AreaSeries) along with createChart when using ES Modules. For UMD builds, all series types are available under the LightweightCharts namespace. Series Markers​ Overview of Changes​ Markers moved to separate primitive for optimized bundle size New ⁠createSeriesMarkers function required Marker management through dedicated primitive instance Migration Steps​ Before (v4)​ // Markers were directly managed through the series instanceseries.setMarkers([ { time: '2019-04-09', position: 'aboveBar', color: 'black', shape: 'arrowDown', },]);// Getting markersconst markers = series.markers(); After (v5)​ // Import the markers primitiveimport { createSeriesMarkers } from 'lightweight-charts';// Create a markers primitive instanceconst seriesMarkers = createSeriesMarkers(series, [ { time: '2019-04-09', position: 'aboveBar', color: 'black', shape: 'arrowDown', },]);// Getting markersconst markers = seriesMarkers.markers();// Updating markersseriesMarkers.setMarkers([/* new markers */]);// Remove all markersseriesMarkers.setMarkers([]); Key Changes​ You must now import createSeriesMarkers separately Instead of calling methods directly on the series instance, create a markers primitive using createSeriesMarkers The markers API is now accessed through the markers primitive instance The marker configuration object format remains the same This change results in smaller bundle sizes when markers aren't used If your application doesn't use markers, you can now benefit from a smaller bundle size as this functionality is no longer included in the core package. Watermarks​ Overview of Changes​ In the new version of Lightweight Charts, the watermark feature has undergone significant changes: Extraction from Core: The watermark functionality has been extracted from the core library. Re-implementation: It's now re-implemented as a Pane Primitive (plugin) included within the library. Improved Tree-shaking: This change makes the feature more tree-shakeable, potentially reducing bundle sizes for users who don't need watermarks. Added an Image Watermark Primitive: In addition to the usual text based watermark, there is now an image watermark feature provided by the createImageWatermark plugin. Migration Steps​ Before (v4)​ const chart = createChart(container, { watermark: { text: 'Watermark Text', color: 'rgba(255,0,0,0.5)', },}); After (v5)​ import { createChart, createTextWatermark } from 'lightweight-charts';const chart = createChart(container, options);const firstPane = chart.panes()[0];createTextWatermark(firstPane, { horzAlign: 'center', vertAlign: 'center', lines: [{ text: 'Watermark Text', color: 'rgba(255,0,0,0.5)', fontSize: 50, }],}); Accessing the New TextWatermark​ The TextWatermark plugin is now available as follows: ESM builds: Import createTextWatermark directly. Standalone script build: Access via LightweightCharts.createTextWatermark. Changes in Options​ The options structure for watermarks has been revised: Multiple Lines: The plugin now supports multiple lines of text. Text Options: Text-related options are now defined per line within the lines property of the options object. Attaching the Watermark​ To use the plugin, you need pass a pane object to the createTextWatermark function. The pane object specifies where the watermark should be attached: Single Pane: If you're using only one pane, you can easily fetch it using chart.panes()[0]. Multiple Panes: For charts with multiple panes, you'll need to specify which pane to attach the watermark to. Example: Implementing a Text Watermark​ Here's a comprehensive example demonstrating how to implement a text watermark in the new version: const chart = createChart(container, options);const mainSeries = chart.addSeries(LineSeries);mainSeries.setData(generateData());const firstPane = chart.panes()[0];createTextWatermark(firstPane, { horzAlign: 'center', vertAlign: 'center', lines: [ { text: 'Hello', color: 'rgba(255,0,0,0.5)', fontSize: 100, fontStyle: 'bold', }, { text: 'This is a text watermark', color: 'rgba(0,0,255,0.5)', fontSize: 50, fontStyle: 'italic', fontFamily: 'monospace', }, ],}); Plugin Typings​ Overview of Changes​ Some of the plugin types and interfaces have been renamed due to the additional of Pane Primitives. ISeriesPrimitivePaneView → IPrimitivePaneView ISeriesPrimitivePaneRenderer → IPrimitivePaneRenderer SeriesPrimitivePaneViewZOrder → PrimitivePaneViewZOrder",
+      "code": "addSeries"
+    }
+  ],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v4-to-v5",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v3-to-v4",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark"
+  ]
+}

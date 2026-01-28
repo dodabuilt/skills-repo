@@ -1,0 +1,1001 @@
+{
+  "name": "lightweight-charts",
+  "total_pages": 248,
+  "base_url": "https://tradingview.github.io/lightweight-charts/docs",
+  "llms_txt_detected": false,
+  "llms_txt_variant": null,
+  "pages": [
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs"
+    },
+    {
+      "title": "lightweight-charts",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/next"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/5.0"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/4.2"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/4.1"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/4.0"
+    },
+    {
+      "title": "Getting started",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/3.8"
+    },
+    {
+      "title": "Series",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/series-types"
+    },
+    {
+      "title": "Chart types",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/chart-types"
+    },
+    {
+      "title": "Price scale",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/price-scale"
+    },
+    {
+      "title": "Time scale",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/time-scale"
+    },
+    {
+      "title": "Panes",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/panes"
+    },
+    {
+      "title": "Time zones",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/time-zones"
+    },
+    {
+      "title": "Plugins",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/intro"
+    },
+    {
+      "title": "From v2 to v3",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3"
+    },
+    {
+      "title": "iOS wrapper",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/ios"
+    },
+    {
+      "title": "Android wrapper",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/android"
+    },
+    {
+      "title": "Release Notes",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/release-notes"
+    },
+    {
+      "title": "Function: createChart()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+    },
+    {
+      "title": "Interface: IChartApi",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi"
+    },
+    {
+      "title": "Interface: ISeriesApi<TSeriesType, HorzScaleItem, TData, TOptions, TPartialOptions>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi"
+    },
+    {
+      "title": "Enumeration: MarkerSign",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign"
+    },
+    {
+      "title": "Interface: AreaData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData"
+    },
+    {
+      "title": "Type alias: AlphaComponent",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent"
+    },
+    {
+      "title": "Variable: AreaSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries"
+    },
+    {
+      "title": "Enumeration: ColorType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType"
+    },
+    {
+      "title": "Enumeration: CrosshairMode",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode"
+    },
+    {
+      "title": "Enumeration: LastPriceAnimationMode",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode"
+    },
+    {
+      "title": "Enumeration: LineStyle",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle"
+    },
+    {
+      "title": "Enumeration: LineType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType"
+    },
+    {
+      "title": "Enumeration: MismatchDirection",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection"
+    },
+    {
+      "title": "Enumeration: PriceLineSource",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource"
+    },
+    {
+      "title": "Enumeration: PriceScaleMode",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode"
+    },
+    {
+      "title": "Enumeration: TickMarkType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType"
+    },
+    {
+      "title": "Enumeration: TrackingModeExitMode",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode"
+    },
+    {
+      "title": "Interface: AreaStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions"
+    },
+    {
+      "title": "Interface: AutoScaleMargins",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoScaleMargins"
+    },
+    {
+      "title": "Interface: AutoscaleInfo",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoscaleInfo"
+    },
+    {
+      "title": "Interface: AxisDoubleClickOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisDoubleClickOptions"
+    },
+    {
+      "title": "Interface: AxisPressedMouseMoveOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisPressedMouseMoveOptions"
+    },
+    {
+      "title": "Interface: BarData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData"
+    },
+    {
+      "title": "Interface: BarStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions"
+    },
+    {
+      "title": "Interface: BarsInfo<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarsInfo"
+    },
+    {
+      "title": "Interface: BaseValuePrice",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaseValuePrice"
+    },
+    {
+      "title": "Interface: BaselineData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData"
+    },
+    {
+      "title": "Interface: BaselineStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions"
+    },
+    {
+      "title": "Interface: BusinessDay",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay"
+    },
+    {
+      "title": "Interface: CandlestickData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData"
+    },
+    {
+      "title": "Interface: CandlestickStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions"
+    },
+    {
+      "title": "Interface: ChartOptionsBase",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase"
+    },
+    {
+      "title": "Interface: ChartOptionsImpl<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsImpl"
+    },
+    {
+      "title": "Interface: CrosshairLineOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairLineOptions"
+    },
+    {
+      "title": "Interface: CrosshairOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairOptions"
+    },
+    {
+      "title": "Interface: CustomBarItemData<HorzScaleItem, TData>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomBarItemData"
+    },
+    {
+      "title": "Interface: CustomConflationContext<HorzScaleItem, TData>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomConflationContext"
+    },
+    {
+      "title": "Interface: CustomData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData"
+    },
+    {
+      "title": "Interface: CustomSeriesWhitespaceData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData"
+    },
+    {
+      "title": "Interface: CustomStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions"
+    },
+    {
+      "title": "Interface: DrawingUtils",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/DrawingUtils"
+    },
+    {
+      "title": "Interface: GridLineOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridLineOptions"
+    },
+    {
+      "title": "Interface: GridOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridOptions"
+    },
+    {
+      "title": "Interface: HandleScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScaleOptions"
+    },
+    {
+      "title": "Interface: HandleScrollOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScrollOptions"
+    },
+    {
+      "title": "Interface: HistogramData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData"
+    },
+    {
+      "title": "Interface: HistogramStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions"
+    },
+    {
+      "title": "Interface: HorzScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions"
+    },
+    {
+      "title": "Interface: IChartApiBase<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase"
+    },
+    {
+      "title": "Interface: ICustomSeriesPaneRenderer",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneRenderer"
+    },
+    {
+      "title": "Interface: ICustomSeriesPaneView<HorzScaleItem, TData, TSeriesOptions>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneView"
+    },
+    {
+      "title": "Interface: IHorzScaleBehavior<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior"
+    },
+    {
+      "title": "Interface: IPaneApi<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi"
+    },
+    {
+      "title": "Interface: IPanePrimitiveBase<TPaneAttachedParameters>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveBase"
+    },
+    {
+      "title": "Interface: IPanePrimitivePaneView",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitivePaneView"
+    },
+    {
+      "title": "Interface: IPanePrimitiveWrapper<T, Options>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveWrapper"
+    },
+    {
+      "title": "Interface: IPriceFormatter",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceFormatter"
+    },
+    {
+      "title": "Interface: IPriceLine",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceLine"
+    },
+    {
+      "title": "Interface: IPriceScaleApi",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceScaleApi"
+    },
+    {
+      "title": "Interface: IPrimitivePaneRenderer",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneRenderer"
+    },
+    {
+      "title": "Interface: IPrimitivePaneView",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneView"
+    },
+    {
+      "title": "Interface: IRange<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IRange"
+    },
+    {
+      "title": "Interface: ISeriesMarkersPluginApi<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi"
+    },
+    {
+      "title": "Interface: ISeriesPrimitiveAxisView",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveAxisView"
+    },
+    {
+      "title": "Interface: ISeriesPrimitiveBase<TSeriesAttachedParameters>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase"
+    },
+    {
+      "title": "Interface: ISeriesPrimitiveWrapper<T, Options>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveWrapper"
+    },
+    {
+      "title": "Interface: ISeriesUpDownMarkerPluginApi<HorzScaleItem, TData>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi"
+    },
+    {
+      "title": "Interface: ITimeScaleApi<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi"
+    },
+    {
+      "title": "Interface: IYieldCurveChartApi",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IYieldCurveChartApi"
+    },
+    {
+      "title": "Interface: ImageWatermarkOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ImageWatermarkOptions"
+    },
+    {
+      "title": "Interface: KineticScrollOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/KineticScrollOptions"
+    },
+    {
+      "title": "Interface: LastValueDataResultWithData",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithData"
+    },
+    {
+      "title": "Interface: LastValueDataResultWithoutData",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithoutData"
+    },
+    {
+      "title": "Interface: LayoutOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions"
+    },
+    {
+      "title": "Interface: LayoutPanesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions"
+    },
+    {
+      "title": "Interface: LineData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData"
+    },
+    {
+      "title": "Interface: LineStyleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions"
+    },
+    {
+      "title": "Interface: LocalizationOptions<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions"
+    },
+    {
+      "title": "Interface: LocalizationOptionsBase",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptionsBase"
+    },
+    {
+      "title": "Interface: MouseEventParams<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams"
+    },
+    {
+      "title": "Interface: OhlcData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/OhlcData"
+    },
+    {
+      "title": "Interface: PaneAttachedParameter<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneAttachedParameter"
+    },
+    {
+      "title": "Interface: PaneRendererCustomData<HorzScaleItem, TData>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneRendererCustomData"
+    },
+    {
+      "title": "Interface: PaneSize",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneSize"
+    },
+    {
+      "title": "Interface: Point",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/Point"
+    },
+    {
+      "title": "Interface: PriceChartLocalizationOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartLocalizationOptions"
+    },
+    {
+      "title": "Interface: PriceChartOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions"
+    },
+    {
+      "title": "Interface: PriceFormatBuiltIn",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatBuiltIn"
+    },
+    {
+      "title": "Interface: PriceFormatCustom",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatCustom"
+    },
+    {
+      "title": "Interface: PriceLineOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceLineOptions"
+    },
+    {
+      "title": "Interface: PriceRange",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceRange"
+    },
+    {
+      "title": "Interface: PriceScaleMargins",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleMargins"
+    },
+    {
+      "title": "Interface: PriceScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions"
+    },
+    {
+      "title": "Interface: PrimitiveHoveredItem",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PrimitiveHoveredItem"
+    },
+    {
+      "title": "Interface: SeriesAttachedParameter<HorzScaleItem, TSeriesType>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesAttachedParameter"
+    },
+    {
+      "title": "Interface: SeriesDataItemTypeMap<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDataItemTypeMap"
+    },
+    {
+      "title": "Interface: SeriesDefinition<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition"
+    },
+    {
+      "title": "Interface: SeriesMarkerBar<TimeType>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBar"
+    },
+    {
+      "title": "Interface: SeriesMarkerBase<TimeType>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBase"
+    },
+    {
+      "title": "Interface: SeriesMarkerPrice<TimeType>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerPrice"
+    },
+    {
+      "title": "Interface: SeriesMarkersOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions"
+    },
+    {
+      "title": "Interface: SeriesOptionsCommon",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon"
+    },
+    {
+      "title": "Interface: SeriesOptionsMap",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap"
+    },
+    {
+      "title": "Interface: SeriesPartialOptionsMap",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesPartialOptionsMap"
+    },
+    {
+      "title": "Interface: SeriesStyleOptionsMap",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesStyleOptionsMap"
+    },
+    {
+      "title": "Interface: SeriesUpDownMarker<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesUpDownMarker"
+    },
+    {
+      "title": "Interface: SingleValueData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SingleValueData"
+    },
+    {
+      "title": "Interface: SolidColor",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SolidColor"
+    },
+    {
+      "title": "Interface: TextWatermarkLineOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkLineOptions"
+    },
+    {
+      "title": "Interface: TextWatermarkOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions"
+    },
+    {
+      "title": "Interface: TickMark",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TickMark"
+    },
+    {
+      "title": "Interface: TimeChartOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeChartOptions"
+    },
+    {
+      "title": "Interface: TimeMark",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeMark"
+    },
+    {
+      "title": "Interface: TimeScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions"
+    },
+    {
+      "title": "Interface: TimeScalePoint",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScalePoint"
+    },
+    {
+      "title": "Interface: TouchMouseEventData",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TouchMouseEventData"
+    },
+    {
+      "title": "Interface: TrackingModeOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TrackingModeOptions"
+    },
+    {
+      "title": "Interface: UpDownMarkersPluginOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions"
+    },
+    {
+      "title": "Interface: VerticalGradientColor",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/VerticalGradientColor"
+    },
+    {
+      "title": "Interface: WhitespaceData<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData"
+    },
+    {
+      "title": "Interface: YieldCurveChartOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveChartOptions"
+    },
+    {
+      "title": "Interface: YieldCurveOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveOptions"
+    },
+    {
+      "title": "Type alias: AreaSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AreaSeriesOptions"
+    },
+    {
+      "title": "Type alias: AreaSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AreaSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: AutoscaleInfoProvider()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AutoscaleInfoProvider"
+    },
+    {
+      "title": "Type alias: Background",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Background"
+    },
+    {
+      "title": "Type alias: BarPrice",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarPrice"
+    },
+    {
+      "title": "Type alias: BarSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarSeriesOptions"
+    },
+    {
+      "title": "Type alias: BarSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: BaseValueType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaseValueType"
+    },
+    {
+      "title": "Type alias: BaselineSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaselineSeriesOptions"
+    },
+    {
+      "title": "Type alias: BaselineSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaselineSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: BlueComponent",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BlueComponent"
+    },
+    {
+      "title": "Type alias: CandlestickSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CandlestickSeriesOptions"
+    },
+    {
+      "title": "Type alias: CandlestickSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CandlestickSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: ChartOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ChartOptions"
+    },
+    {
+      "title": "Type alias: ColorSpace",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ColorSpace"
+    },
+    {
+      "title": "Type alias: Coordinate",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Coordinate"
+    },
+    {
+      "title": "Type alias: CreatePriceLineOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CreatePriceLineOptions"
+    },
+    {
+      "title": "Type alias: CustomColorParser()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomColorParser"
+    },
+    {
+      "title": "Type alias: CustomSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesOptions"
+    },
+    {
+      "title": "Type alias: CustomSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: CustomSeriesPricePlotValues",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesPricePlotValues"
+    },
+    {
+      "title": "Type alias: DataChangedHandler()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DataChangedHandler"
+    },
+    {
+      "title": "Type alias: DataChangedScope",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DataChangedScope"
+    },
+    {
+      "title": "Type alias: DataItem<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DataItem"
+    },
+    {
+      "title": "Type alias: DeepPartial<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial"
+    },
+    {
+      "title": "Type alias: GreenComponent",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/GreenComponent"
+    },
+    {
+      "title": "Type alias: HistogramSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HistogramSeriesOptions"
+    },
+    {
+      "title": "Type alias: HistogramSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HistogramSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: HorzAlign",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HorzAlign"
+    },
+    {
+      "title": "Type alias: HorzScaleItemConverterToInternalObj()<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HorzScaleItemConverterToInternalObj"
+    },
+    {
+      "title": "Type alias: HorzScalePriceItem",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HorzScalePriceItem"
+    },
+    {
+      "title": "Type alias: IImageWatermarkPluginApi<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/IImageWatermarkPluginApi"
+    },
+    {
+      "title": "Type alias: IPanePrimitive<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/IPanePrimitive"
+    },
+    {
+      "title": "Type alias: ISeriesPrimitive<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ISeriesPrimitive"
+    },
+    {
+      "title": "Type alias: ITextWatermarkPluginApi<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ITextWatermarkPluginApi"
+    },
+    {
+      "title": "Type alias: InternalHorzScaleItem",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/InternalHorzScaleItem"
+    },
+    {
+      "title": "Type alias: InternalHorzScaleItemKey",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/InternalHorzScaleItemKey"
+    },
+    {
+      "title": "Type alias: LastValueDataResult",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LastValueDataResult"
+    },
+    {
+      "title": "Type alias: LineSeriesOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineSeriesOptions"
+    },
+    {
+      "title": "Type alias: LineSeriesPartialOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineSeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: LineWidth",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineWidth"
+    },
+    {
+      "title": "Type alias: Logical",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Logical"
+    },
+    {
+      "title": "Type alias: LogicalRange",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LogicalRange"
+    },
+    {
+      "title": "Type alias: LogicalRangeChangeEventHandler()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LogicalRangeChangeEventHandler"
+    },
+    {
+      "title": "Type alias: MouseEventHandler()<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/MouseEventHandler"
+    },
+    {
+      "title": "Type alias: Mutable<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Mutable"
+    },
+    {
+      "title": "Type alias: Nominal<T, Name>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Nominal"
+    },
+    {
+      "title": "Type alias: OverlayPriceScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/OverlayPriceScaleOptions"
+    },
+    {
+      "title": "Type alias: PercentageFormatterFn()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PercentageFormatterFn"
+    },
+    {
+      "title": "Type alias: PriceFormat",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PriceFormat"
+    },
+    {
+      "title": "Type alias: PriceFormatterFn()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PriceFormatterFn"
+    },
+    {
+      "title": "Type alias: PriceToCoordinateConverter()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PriceToCoordinateConverter"
+    },
+    {
+      "title": "Type alias: PrimitiveHasApplyOptions<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PrimitiveHasApplyOptions"
+    },
+    {
+      "title": "Type alias: PrimitivePaneViewZOrder",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/PrimitivePaneViewZOrder"
+    },
+    {
+      "title": "Type alias: RedComponent",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/RedComponent"
+    },
+    {
+      "title": "Type alias: Rgba",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Rgba"
+    },
+    {
+      "title": "Type alias: SeriesMarker<TimeType>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarker"
+    },
+    {
+      "title": "Type alias: SeriesMarkerBarPosition",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarkerBarPosition"
+    },
+    {
+      "title": "Type alias: SeriesMarkerPosition",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarkerPosition"
+    },
+    {
+      "title": "Type alias: SeriesMarkerPricePosition",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarkerPricePosition"
+    },
+    {
+      "title": "Type alias: SeriesMarkerShape",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarkerShape"
+    },
+    {
+      "title": "Type alias: SeriesMarkerZOrder",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesMarkerZOrder"
+    },
+    {
+      "title": "Type alias: SeriesOptions<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesOptions"
+    },
+    {
+      "title": "Type alias: SeriesPartialOptions<T>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesPartialOptions"
+    },
+    {
+      "title": "Type alias: SeriesType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SeriesType"
+    },
+    {
+      "title": "Type alias: SizeChangeEventHandler()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/SizeChangeEventHandler"
+    },
+    {
+      "title": "Type alias: TickMarkFormatter()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TickMarkFormatter"
+    },
+    {
+      "title": "Type alias: TickMarkWeightValue",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TickMarkWeightValue"
+    },
+    {
+      "title": "Type alias: TickmarksPercentageFormatterFn()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TickmarksPercentageFormatterFn"
+    },
+    {
+      "title": "Type alias: TickmarksPriceFormatterFn()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TickmarksPriceFormatterFn"
+    },
+    {
+      "title": "Type alias: Time",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Time"
+    },
+    {
+      "title": "Type alias: TimeFormatterFn()<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimeFormatterFn"
+    },
+    {
+      "title": "Type alias: TimePointIndex",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimePointIndex"
+    },
+    {
+      "title": "Type alias: TimeRangeChangeEventHandler()<HorzScaleItem>",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimeRangeChangeEventHandler"
+    },
+    {
+      "title": "Type alias: UTCTimestamp",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/UTCTimestamp"
+    },
+    {
+      "title": "Type alias: UpDownMarkersSupportedSeriesTypes",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/UpDownMarkersSupportedSeriesTypes"
+    },
+    {
+      "title": "Type alias: VertAlign",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/VertAlign"
+    },
+    {
+      "title": "Type alias: VisiblePriceScaleOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/VisiblePriceScaleOptions"
+    },
+    {
+      "title": "Type alias: YieldCurveSeriesType",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/YieldCurveSeriesType"
+    },
+    {
+      "title": "Variable: BarSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/BarSeries"
+    },
+    {
+      "title": "Variable: BaselineSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/BaselineSeries"
+    },
+    {
+      "title": "Variable: CandlestickSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/CandlestickSeries"
+    },
+    {
+      "title": "Variable: HistogramSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/HistogramSeries"
+    },
+    {
+      "title": "Variable: LineSeries",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/LineSeries"
+    },
+    {
+      "title": "Variable: customSeriesDefaultOptions",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/variables/customSeriesDefaultOptions"
+    },
+    {
+      "title": "Function: createChartEx()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx"
+    },
+    {
+      "title": "Function: createImageWatermark()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark"
+    },
+    {
+      "title": "Function: createOptionsChart()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart"
+    },
+    {
+      "title": "Function: createSeriesMarkers()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers"
+    },
+    {
+      "title": "Function: createTextWatermark()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark"
+    },
+    {
+      "title": "Function: createUpDownMarkers()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers"
+    },
+    {
+      "title": "Function: createYieldCurveChart()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart"
+    },
+    {
+      "title": "Function: defaultHorzScaleBehavior()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior"
+    },
+    {
+      "title": "Function: isBusinessDay()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay"
+    },
+    {
+      "title": "Function: isUTCTimestamp()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp"
+    },
+    {
+      "title": "Function: version()",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/version"
+    },
+    {
+      "title": "Series Primitives",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/series-primitives"
+    },
+    {
+      "title": "Pane Primitives",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives"
+    },
+    {
+      "title": "Custom Series Types",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/custom_series"
+    },
+    {
+      "title": "Canvas Rendering Target",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/canvas-rendering-target"
+    },
+    {
+      "title": "Best Practices for Pixel Perfect Rendering in Canvas Drawings",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering"
+    },
+    {
+      "title": "From v3 to v4",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v3-to-v4"
+    },
+    {
+      "title": "From v4 to v5",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v4-to-v5"
+    },
+    {
+      "title": "Full Bar Width Calculations",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/full-bar-width"
+    },
+    {
+      "title": "Candlestick Width Calculations",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/candlestick"
+    },
+    {
+      "title": "Crosshair and Grid Line Width Calculations",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/crosshair"
+    },
+    {
+      "title": "Histogram Column Width Calculations",
+      "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/columns"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+  "title": "Plugins",
+  "content": "Plugins allow you to extend the library's functionality and render custom elements, such as new series, drawing tools, indicators, and watermarks.\n\nYou can create plugins of the following types:\n\nCustom series allow you to define new types of series with custom data structures and rendering logic. For implementation details, refer to the Custom Series Types article.\n\nUse the addCustomSeries method to add a custom series to the chart. Then, you can manage it through the same API available for built-in series. For example, call the setData method to populate the series with data.\n\nPrimitives allow you to define custom visualizations, drawing tools, and chart annotations. You can render them at different levels in the visual stack to create complex, layered compositions.\n\nSeries primitives are attached to a specific series and can render on the main pane, price and time scales. For implementation details, refer to the Series Primitives article.\n\nUse the attachPrimitive method to add a primitive to the chart and attach it to the series.\n\nPane primitives are attached to a chart pane rather than a specific series. You can use them to create chart-wide annotations and features like watermarks. For implementation details, refer to the Pane Primitives article.\n\nNote that pane primitives cannot render on the price or time scale.\n\nUse the attachPrimitive method to add a primitive to the chart and attach it to the pane.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Plugins",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Custom series​",
+      "id": "custom-series"
+    },
+    {
+      "level": "h2",
+      "text": "Primitives​",
+      "id": "primitives"
+    },
+    {
+      "level": "h3",
+      "text": "Series primitives​",
+      "id": "series-primitives"
+    },
+    {
+      "level": "h3",
+      "text": "Pane primitives​",
+      "id": "pane-primitives"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "class MyCustomSeries {    /* Class implementing the ICustomSeriesPaneView interface */}// Create an instantiated custom seriesconst customSeriesInstance = new MyCustomSeries();const chart = createChart(document.getElementById('container'));const myCustomSeries = chart.addCustomSeries(customSeriesInstance, {    // Options for MyCustomSeries    customOption: 10,});const data = [    { time: 1642425322, value: 123, customValue: 456 },    /* ... more data */];myCustomSeries.setData(data);",
+      "language": "javascript"
+    },
+    {
+      "code": "class MyCustomPrimitive {    /* Class implementing the ISeriesPrimitive interface */}// Create an instantiated series primitiveconst myCustomPrimitive = new MyCustomPrimitive();const chart = createChart(document.getElementById('container'));const lineSeries = chart.addSeries(LineSeries);const data = [    { time: 1642425322, value: 123 },    /* ... more data */];// Attach the primitive to the serieslineSeries.attachPrimitive(myCustomPrimitive);",
+      "language": "javascript"
+    },
+    {
+      "code": "class MyCustomPanePrimitive {    /* Class implementing the IPanePrimitive interface */}// Create an instantiated pane primitiveconst myCustomPanePrimitive = new MyCustomPanePrimitive();const chart = createChart(document.getElementById('container'));// Get the main paneconst mainPane = chart.panes()[0];// Attach the primitive to the panemainPane.attachPrimitive(myCustomPanePrimitive);",
+      "language": "javascript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/series-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/custom_series",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/canvas-rendering-target",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi"
+  ]
+}

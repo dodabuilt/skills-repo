@@ -1,0 +1,717 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+  "title": "Interface: IChartApi",
+  "content": "The main interface of a single chart using time for horizontal scale.\n\napplyOptions(options): void\n\nApplies new options to the chart\n\n• options: DeepPartial <TimeChartOptions>\n\nAny subset of options.\n\nIChartApiBase . applyOptions\n\nRemoves the chart object including all DOM elements. This is an irreversible operation, you cannot do anything with the chart after removing it.\n\nIChartApiBase . remove\n\nresize(width, height, forceRepaint?): void\n\nSets fixed size of the chart. By default chart takes up 100% of its container.\n\nIf chart has the autoSize option enabled, and the ResizeObserver is available then the width and height values will be ignored.\n\nTarget width of the chart.\n\nTarget height of the chart.\n\n• forceRepaint?: boolean\n\nTrue to initiate resize immediately. One could need this to get screenshot immediately after resize.\n\nIChartApiBase . resize\n\naddCustomSeries<TData, TOptions, TPartialOptions>(customPaneView, customOptions?, paneIndex?): ISeriesApi<\"Custom\", Time, TData | WhitespaceData <Time>, TOptions, TPartialOptions>\n\nCreates a custom series with specified parameters.\n\nA custom series is a generic series which can be extended with a custom renderer to implement chart types which the library doesn't support by default.\n\n• TData extends CustomData <Time>\n\n• TOptions extends CustomSeriesOptions\n\n• TPartialOptions extends DeepPartial<TOptions & SeriesOptionsCommon> = DeepPartial<TOptions & SeriesOptionsCommon>\n\n• customPaneView: ICustomSeriesPaneView <Time, TData, TOptions>\n\nA custom series pane view which implements the custom renderer.\n\n• customOptions?: DeepPartial<TOptions & SeriesOptionsCommon>\n\nCustomization parameters of the series being created.\n\nISeriesApi<\"Custom\", Time, TData | WhitespaceData <Time>, TOptions, TPartialOptions>\n\nIChartApiBase . addCustomSeries\n\naddSeries<T>(definition, options?, paneIndex?): ISeriesApi<T, Time, SeriesDataItemTypeMap <Time>[T], SeriesOptionsMap[T], SeriesPartialOptionsMap[T]>\n\nCreates a series with specified parameters.\n\n• T extends keyof SeriesOptionsMap\n\n• definition: SeriesDefinition<T>\n\n• options?: SeriesPartialOptionsMap[T]\n\nCustomization parameters of the series being created.\n\nAn index of the pane where the series should be created.\n\nISeriesApi<T, Time, SeriesDataItemTypeMap <Time>[T], SeriesOptionsMap[T], SeriesPartialOptionsMap[T]>\n\nIChartApiBase . addSeries\n\nremoveSeries(seriesApi): void\n\nRemoves a series of any type. This is an irreversible operation, you cannot do anything with the series after removing it.\n\n• seriesApi: ISeriesApi<keyof SeriesOptionsMap, Time, CustomData <Time> | WhitespaceData <Time> | AreaData <Time> | BarData <Time> | CandlestickData <Time> | BaselineData <Time> | LineData <Time> | HistogramData <Time> | CustomSeriesWhitespaceData <Time>, CustomSeriesOptions | AreaSeriesOptions | BarSeriesOptions | CandlestickSeriesOptions | BaselineSeriesOptions | LineSeriesOptions | HistogramSeriesOptions, DeepPartial <AreaStyleOptions & SeriesOptionsCommon> | DeepPartial <BarStyleOptions & SeriesOptionsCommon> | DeepPartial <CandlestickStyleOptions & SeriesOptionsCommon> | DeepPartial <BaselineStyleOptions & SeriesOptionsCommon> | DeepPartial <LineStyleOptions & SeriesOptionsCommon> | DeepPartial <HistogramStyleOptions & SeriesOptionsCommon> | DeepPartial <CustomStyleOptions & SeriesOptionsCommon>>\n\nIChartApiBase . removeSeries\n\nsubscribeClick(handler): void\n\nSubscribe to the chart click event.\n\n• handler: MouseEventHandler <Time>\n\nHandler to be called on mouse click.\n\nIChartApiBase . subscribeClick\n\nunsubscribeClick(handler): void\n\nUnsubscribe a handler that was previously subscribed using subscribeClick.\n\n• handler: MouseEventHandler <Time>\n\nPreviously subscribed handler\n\nIChartApiBase . unsubscribeClick\n\nsubscribeDblClick(handler): void\n\nSubscribe to the chart double-click event.\n\n• handler: MouseEventHandler <Time>\n\nHandler to be called on mouse double-click.\n\nIChartApiBase . subscribeDblClick\n\nunsubscribeDblClick(handler): void\n\nUnsubscribe a handler that was previously subscribed using subscribeDblClick.\n\n• handler: MouseEventHandler <Time>\n\nPreviously subscribed handler\n\nIChartApiBase . unsubscribeDblClick\n\nsubscribeCrosshairMove(handler): void\n\nSubscribe to the crosshair move event.\n\n• handler: MouseEventHandler <Time>\n\nHandler to be called on crosshair move.\n\nIChartApiBase . subscribeCrosshairMove\n\nunsubscribeCrosshairMove(handler): void\n\nUnsubscribe a handler that was previously subscribed using subscribeCrosshairMove.\n\n• handler: MouseEventHandler <Time>\n\nPreviously subscribed handler\n\nIChartApiBase . unsubscribeCrosshairMove\n\npriceScale(priceScaleId, paneIndex?): IPriceScaleApi\n\nReturns API to manipulate a price scale.\n\n• priceScaleId: string\n\nID of the price scale.\n\nIndex of the pane (default: 0)\n\nIChartApiBase . priceScale\n\ntimeScale(): ITimeScaleApi <Time>\n\nReturns API to manipulate the time scale\n\nIChartApiBase . timeScale\n\noptions(): Readonly <ChartOptionsImpl <Time>>\n\nReturns currently applied options\n\nReadonly <ChartOptionsImpl <Time>>\n\nFull set of currently applied options, including defaults\n\nIChartApiBase . options\n\ntakeScreenshot(addTopLayer?, includeCrosshair?): HTMLCanvasElement\n\nMake a screenshot of the chart with all the elements excluding crosshair.\n\n• addTopLayer?: boolean\n\nif true, the top layer and primitives will be included in the screenshot (default: false)\n\n• includeCrosshair?: boolean\n\nworks only if addTopLayer is enabled. If true, the crosshair will be included in the screenshot (default: false)\n\nA canvas with the chart drawn on. Any Canvas methods like toDataURL() or toBlob() can be used to serialize the result.\n\nIChartApiBase . takeScreenshot\n\naddPane(preserveEmptyPane?): IPaneApi <Time>\n\nAdd a pane to the chart\n\n• preserveEmptyPane?: boolean\n\nWhether to preserve the empty pane\n\nIChartApiBase . addPane\n\npanes(): IPaneApi <Time>[]\n\nReturns array of panes' API\n\nIChartApiBase . panes\n\nremovePane(index): void\n\nRemoves a pane with index\n\nthe pane to be removed\n\nIChartApiBase . removePane\n\nswapPanes(first, second): void\n\nswap the position of two panes.\n\nIChartApiBase . swapPanes\n\nautoSizeActive(): boolean\n\nReturns the active state of the autoSize option. This can be used to check whether the chart is handling resizing automatically with a ResizeObserver.\n\nWhether the autoSize option is enabled and the active.\n\nIChartApiBase . autoSizeActive\n\nchartElement(): HTMLDivElement\n\nReturns the generated div element containing the chart. This can be used for adding your own additional event listeners, or for measuring the elements dimensions and position within the document.\n\ngenerated div element containing the chart.\n\nIChartApiBase . chartElement\n\nsetCrosshairPosition(price, horizontalPosition, seriesApi): void\n\nSet the crosshair position within the chart.\n\nUsually the crosshair position is set automatically by the user's actions. However in some cases you may want to set it explicitly.\n\nFor example if you want to synchronise the crosshairs of two separate charts.\n\nThe price (vertical coordinate) of the new crosshair position.\n\n• horizontalPosition: Time\n\nThe horizontal coordinate (time by default) of the new crosshair position.\n\n• seriesApi: ISeriesApi<keyof SeriesOptionsMap, Time, CustomData <Time> | WhitespaceData <Time> | AreaData <Time> | BarData <Time> | CandlestickData <Time> | BaselineData <Time> | LineData <Time> | HistogramData <Time> | CustomSeriesWhitespaceData <Time>, CustomSeriesOptions | AreaSeriesOptions | BarSeriesOptions | CandlestickSeriesOptions | BaselineSeriesOptions | LineSeriesOptions | HistogramSeriesOptions, DeepPartial <AreaStyleOptions & SeriesOptionsCommon> | DeepPartial <BarStyleOptions & SeriesOptionsCommon> | DeepPartial <CandlestickStyleOptions & SeriesOptionsCommon> | DeepPartial <BaselineStyleOptions & SeriesOptionsCommon> | DeepPartial <LineStyleOptions & SeriesOptionsCommon> | DeepPartial <HistogramStyleOptions & SeriesOptionsCommon> | DeepPartial <CustomStyleOptions & SeriesOptionsCommon>>\n\nIChartApiBase . setCrosshairPosition\n\nclearCrosshairPosition(): void\n\nClear the crosshair position within the chart.\n\nIChartApiBase . clearCrosshairPosition\n\npaneSize(paneIndex?): PaneSize\n\nReturns the dimensions of the chart pane (the plot surface which excludes time and price scales). This would typically only be useful for plugin development.\n\nThe index of the pane\n\nDimensions of the chart pane\n\nIChartApiBase . paneSize\n\nhorzBehaviour(): IHorzScaleBehavior <Time>\n\nReturns the horizontal scale behaviour.\n\nIHorzScaleBehavior <Time>\n\nIChartApiBase . horzBehaviour",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Interface: IChartApi",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Extends​",
+      "id": "extends"
+    },
+    {
+      "level": "h2",
+      "text": "Methods​",
+      "id": "methods"
+    },
+    {
+      "level": "h3",
+      "text": "applyOptions()​",
+      "id": "applyoptions"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h4",
+      "text": "Overrides​",
+      "id": "overrides"
+    },
+    {
+      "level": "h3",
+      "text": "remove()​",
+      "id": "remove"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-1"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from"
+    },
+    {
+      "level": "h3",
+      "text": "resize()​",
+      "id": "resize"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-1"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-2"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-1"
+    },
+    {
+      "level": "h3",
+      "text": "addCustomSeries()​",
+      "id": "addcustomseries"
+    },
+    {
+      "level": "h4",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-2"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-3"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-2"
+    },
+    {
+      "level": "h3",
+      "text": "addSeries()​",
+      "id": "addseries"
+    },
+    {
+      "level": "h4",
+      "text": "Type parameters​",
+      "id": "type-parameters-1"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-3"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-4"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-3"
+    },
+    {
+      "level": "h3",
+      "text": "removeSeries()​",
+      "id": "removeseries"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-4"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-5"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-4"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeClick()​",
+      "id": "subscribeclick"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-5"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-6"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-5"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-1"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeClick()​",
+      "id": "unsubscribeclick"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-6"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-7"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-6"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-2"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeDblClick()​",
+      "id": "subscribedblclick"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-7"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-8"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-7"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-3"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeDblClick()​",
+      "id": "unsubscribedblclick"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-8"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-9"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-8"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-4"
+    },
+    {
+      "level": "h3",
+      "text": "subscribeCrosshairMove()​",
+      "id": "subscribecrosshairmove"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-9"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-10"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-9"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-5"
+    },
+    {
+      "level": "h3",
+      "text": "unsubscribeCrosshairMove()​",
+      "id": "unsubscribecrosshairmove"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-10"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-11"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-10"
+    },
+    {
+      "level": "h4",
+      "text": "Example​",
+      "id": "example-6"
+    },
+    {
+      "level": "h3",
+      "text": "priceScale()​",
+      "id": "pricescale"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-11"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-12"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-11"
+    },
+    {
+      "level": "h3",
+      "text": "timeScale()​",
+      "id": "timescale"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-13"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-12"
+    },
+    {
+      "level": "h3",
+      "text": "options()​",
+      "id": "options"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-14"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-13"
+    },
+    {
+      "level": "h3",
+      "text": "takeScreenshot()​",
+      "id": "takescreenshot"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-12"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-15"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-14"
+    },
+    {
+      "level": "h3",
+      "text": "addPane()​",
+      "id": "addpane"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-13"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-16"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-15"
+    },
+    {
+      "level": "h3",
+      "text": "panes()​",
+      "id": "panes"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-17"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-16"
+    },
+    {
+      "level": "h3",
+      "text": "removePane()​",
+      "id": "removepane"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-14"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-18"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-17"
+    },
+    {
+      "level": "h3",
+      "text": "swapPanes()​",
+      "id": "swappanes"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-15"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-19"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-18"
+    },
+    {
+      "level": "h3",
+      "text": "autoSizeActive()​",
+      "id": "autosizeactive"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-20"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-19"
+    },
+    {
+      "level": "h3",
+      "text": "chartElement()​",
+      "id": "chartelement"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-21"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-20"
+    },
+    {
+      "level": "h3",
+      "text": "setCrosshairPosition()​",
+      "id": "setcrosshairposition"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-16"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-22"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-21"
+    },
+    {
+      "level": "h3",
+      "text": "clearCrosshairPosition()​",
+      "id": "clearcrosshairposition"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-23"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-22"
+    },
+    {
+      "level": "h3",
+      "text": "paneSize()​",
+      "id": "panesize"
+    },
+    {
+      "level": "h4",
+      "text": "Parameters​",
+      "id": "parameters-17"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-24"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-23"
+    },
+    {
+      "level": "h4",
+      "text": "Default Value​",
+      "id": "default-value"
+    },
+    {
+      "level": "h3",
+      "text": "horzBehaviour()​",
+      "id": "horzbehaviour"
+    },
+    {
+      "level": "h4",
+      "text": "Returns​",
+      "id": "returns-25"
+    },
+    {
+      "level": "h4",
+      "text": "Inherited from​",
+      "id": "inherited-from-24"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "const series = chart.addCustomSeries(myCustomPaneView);",
+      "language": "javascript"
+    },
+    {
+      "code": "const series = chart.addSeries(LineSeries, { lineWidth: 2 });",
+      "language": "css"
+    },
+    {
+      "code": "chart.removeSeries(series);",
+      "language": "unknown"
+    },
+    {
+      "code": "function myClickHandler(param) {    if (!param.point) {        return;    }    console.log(`Click at ${param.point.x}, ${param.point.y}. The time is ${param.time}.`);}chart.subscribeClick(myClickHandler);",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.unsubscribeClick(myClickHandler);",
+      "language": "unknown"
+    },
+    {
+      "code": "function myDblClickHandler(param) {    if (!param.point) {        return;    }    console.log(`Double Click at ${param.point.x}, ${param.point.y}. The time is ${param.time}.`);}chart.subscribeDblClick(myDblClickHandler);",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.unsubscribeDblClick(myDblClickHandler);",
+      "language": "unknown"
+    },
+    {
+      "code": "function myCrosshairMoveHandler(param) {    if (!param.point) {        return;    }    console.log(`Crosshair moved to ${param.point.x}, ${param.point.y}. The time is ${param.time}.`);}chart.subscribeCrosshairMove(myCrosshairMoveHandler);",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.unsubscribeCrosshairMove(myCrosshairMoveHandler);",
+      "language": "unknown"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AutoscaleInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisDoubleClickOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AxisPressedMouseMoveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BarsInfo",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaseValuePrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BaselineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/BusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CandlestickStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ChartOptionsImpl",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CrosshairOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomBarItemData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomConflationContext",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomSeriesWhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/CustomStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/DrawingUtils",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/GridOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HandleScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HistogramStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/HorzScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApiBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ICustomSeriesPaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPanePrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceFormatter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceLine",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPriceScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneRenderer",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPrimitivePaneView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesMarkersPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveAxisView",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesPrimitiveWrapper",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesUpDownMarkerPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IYieldCurveChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ImageWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/KineticScrollOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LastValueDataResultWithoutData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LineStyleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptionsBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/OhlcData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneRendererCustomData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PaneSize",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/Point",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartLocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatBuiltIn",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceFormatCustom",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceRange",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleMargins",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PriceScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/PrimitiveHoveredItem",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesAttachedParameter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDataItemTypeMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesDefinition",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBar",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerBase",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkerPrice",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesMarkersOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsCommon",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesPartialOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesStyleOptionsMap",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SeriesUpDownMarker",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SingleValueData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/SolidColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkLineOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TickMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeMark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScalePoint",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TouchMouseEventData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TrackingModeOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/UpDownMarkersPluginOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/VerticalGradientColor",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/WhitespaceData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveChartOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/YieldCurveOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Time",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CustomSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AreaSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BarSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/CandlestickSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/BaselineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/LineSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/HistogramSeriesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/MouseEventHandler"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+  "title": "Function: defaultHorzScaleBehavior()",
+  "content": "defaultHorzScaleBehavior(): () => IHorzScaleBehavior <Time>\n\nProvides the default implementation of the horizontal scale (time-based) that can be used as a base for extending the horizontal scale with custom behavior. This allows for the introduction of custom functionality without re-implementing the entire IHorzScaleBehavior<Time> interface.\n\nFor further details, refer to the createChartEx chart constructor method.\n\nAn uninitialized class implementing the IHorzScaleBehavior<Time> interface\n\nIHorzScaleBehavior <Time>",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: defaultHorzScaleBehavior()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h3",
+      "text": "Returns​",
+      "id": "returns-1"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/Time"
+  ]
+}

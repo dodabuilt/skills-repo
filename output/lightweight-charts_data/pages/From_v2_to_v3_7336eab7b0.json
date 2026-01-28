@@ -1,0 +1,105 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+  "title": "From v2 to v3",
+  "content": "Lightweight Charts™ library 3.0 announces the major improvements: supporting two price scales and improving the time scale API. In order of keep the API clear and consistent, we decided to allow breaking change of the API.\n\nIn this document you can find the migration guide from the previous version to 3.0.\n\nPreviously, to handle changing visible time range you needed to use subscribeVisibleTimeRangeChange and unsubscribeVisibleTimeRangeChange to subscribe and unsubscribe from visible range events. These methods were available in the chart object (e.g. you call it like chart.subscribeVisibleTimeRangeChange(func)).\n\nIn 3.0 in order to make API more consistent with the new API we decided to move these methods to ITimeScaleApi (along with the new subscription methods ITimeScaleApi.subscribeVisibleLogicalRangeChange and ITimeScaleApi.unsubscribeVisibleLogicalRangeChange).\n\nSo, to migrate your code to 3.0 you just need to replace:\n\nWe understand disadvantages of breaking changes in the API, so we have not removed support of the current API at all, but have deprecated it, so the most common cases will continue to work.\n\nYou can refer to the new API here.\n\nFollowing are migration rules.\n\nDefault behavior is not changed. If you do not specify price scale options, the chart will have the right price scale visible and all the series will assign to it.\n\nIf you need the price scale to be drawn on the left side, you should make the following changes. instead of\n\nthen specify target price scale while creating a series:\n\nNew version fully supports this case via the old API, however this support will be removed in the future releases.\n\nTo create chart without any visible price scale, instead of\n\nNew version fully supports this case via the old API, however this support will be removed in the future releases.\n\nTo create an overlay series, instead of\n\nNew version fully supports this case via the old API, however this support will be removed in the future releases.\n\nTo do this, instead of\n\nNew version does not support this case via the old API, so, if you use it, you should migrate your code in order of keeping it working.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "From v2 to v3",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Time Scale API​",
+      "id": "time-scale-api"
+    },
+    {
+      "level": "h2",
+      "text": "Two price scales​",
+      "id": "two-price-scales"
+    },
+    {
+      "level": "h3",
+      "text": "Default behavior​",
+      "id": "default-behavior"
+    },
+    {
+      "level": "h3",
+      "text": "Left price scale​",
+      "id": "left-price-scale"
+    },
+    {
+      "level": "h3",
+      "text": "No price scale​",
+      "id": "no-price-scale"
+    },
+    {
+      "level": "h3",
+      "text": "Creating overlay​",
+      "id": "creating-overlay"
+    },
+    {
+      "level": "h3",
+      "text": "Move price scale from right to left or vice versa​",
+      "id": "move-price-scale-from-right-to-left-or-vice-versa"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "const chart = LightweightCharts.createChart(container, {    priceScale: {        position: 'left',    },});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container, {    rightPriceScale: {        visible: false,    },    leftPriceScale: {        visible: true,    },});",
+      "language": "css"
+    },
+    {
+      "code": "const histSeries = chart.addHistogramSeries({    priceScaleId: 'left',});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container, {    priceScale: {        position: 'none',    },});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container, {    leftPriceScale: {        visible: false,    },    rightPriceScale: {        visible: false,    },});",
+      "language": "css"
+    },
+    {
+      "code": "const histogramSeries = chart.addHistogramSeries({    overlay: true,});",
+      "language": "css"
+    },
+    {
+      "code": "const histogramSeries = chart.addHistogramSeries({    // or any other _the same_ id for all overlay series    priceScaleId: '',});",
+      "language": "javascript"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container);const mainSeries = chart.addLineSeries();// ...chart.applyOptions({    priceScale: {        position: 'left',    },});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = LightweightCharts.createChart(container);const mainSeries = chart.addLineSeries();// ...chart.applyOptions({    leftPriceScale: {        visible: true,    },    rightPriceScale: {        visible: false,    },});mainSeries.applyOptions({    priceScaleId: 'left',});",
+      "language": "css"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v3-to-v4",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v4-to-v5",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ITimeScaleApi",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/full-bar-width"
+  ]
+}

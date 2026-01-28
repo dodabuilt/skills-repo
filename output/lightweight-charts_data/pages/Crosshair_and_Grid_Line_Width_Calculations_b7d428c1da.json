@@ -1,0 +1,45 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/crosshair",
+  "title": "Crosshair and Grid Line Width Calculations",
+  "content": "It is recommend that you first read the Pixel Perfect Rendering page.\n\nThe following functions can be used to get the calculated width that the library would use for a crosshair or grid line at a specific device pixel ratio.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Crosshair and Grid Line Width Calculations",
+      "id": ""
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "/** * Default grid / crosshair line width in Bitmap sizing * @param horizontalPixelRatio - horizontal pixel ratio * @returns default grid / crosshair line width in Bitmap sizing */export function gridAndCrosshairBitmapWidth(    horizontalPixelRatio: number): number {    return Math.max(1, Math.floor(horizontalPixelRatio));}/** * Default grid / crosshair line width in Media sizing * @param horizontalPixelRatio - horizontal pixel ratio * @returns default grid / crosshair line width in Media sizing */export function gridAndCrosshairMediaWidth(    horizontalPixelRatio: number): number {    return (        gridAndCrosshairBitmapWidth(horizontalPixelRatio) / horizontalPixelRatio    );}",
+      "language": "typescript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/crosshair",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/series-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/custom_series",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/canvas-rendering-target",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/candlestick",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/columns",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/full-bar-width",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes"
+  ]
+}

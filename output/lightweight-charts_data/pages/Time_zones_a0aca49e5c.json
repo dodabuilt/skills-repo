@@ -1,0 +1,72 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+  "title": "Time zones",
+  "content": "Lightweight Charts™ does not natively support time zones. If necessary, you should handle time zone adjustments manually.\n\nThe library processes all date and time values in UTC. To support time zones, adjust each bar's timestamp in your dataset based on the appropriate time zone offset. Therefore, a UTC timestamp should correspond to the local time in the target time zone.\n\nConsider the example. A data point has the 2021-01-01T10:00:00.000Z timestamp in UTC. You want to display it in the Europe/Moscow time zone, which has the UTC+03:00 offset according to the IANA time zone database. To do this, adjust the original UTC timestamp by adding 3 hours. Therefore, the new timestamp should be 2021-01-01T13:00:00.000Z.\n\nWhen converting time zones, consider the following: Adding a time zone offset could change not only the time but the date as well. An offset may vary due to DST (Daylight Saving Time) or other regional adjustments. If your data is measured in business days and does not include a time component, in most cases, you should not adjust it to a time zone.\n\nConsider the approaches below to convert time values to the required time zone.\n\nFor more information on this approach, refer to StackOverflow.\n\nIf you only need to support a client (local) time zone, you can use the following function:\n\nYou can use the utcToZonedTime function from the date-fns-tz library as follows:\n\nIf you process a large dataset and approaches above do not meet your performance requirements, consider using the tzdata.\n\nThis approach can significantly improve performance for the following reasons:\n\nThe approaches above were not implemented in Lightweight Charts™ for the following reasons:\n\nSince time zone support is not required for all users, it is intentionally left out of the library to maintain high performance and a lightweight package size.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Time zones",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Overview​",
+      "id": "overview"
+    },
+    {
+      "level": "h2",
+      "text": "Approaches​",
+      "id": "approaches"
+    },
+    {
+      "level": "h3",
+      "text": "Using pure JavaScript​",
+      "id": "using-pure-javascript"
+    },
+    {
+      "level": "h3",
+      "text": "Using the date-fns-tz library​",
+      "id": "using-the-date-fns-tz-library"
+    },
+    {
+      "level": "h3",
+      "text": "Using the IANA time zone database​",
+      "id": "using-the-iana-time-zone-database"
+    },
+    {
+      "level": "h2",
+      "text": "Why are time zones not supported?​",
+      "id": "why-are-time-zones-not-supported"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "function timeToTz(originalTime, timeZone) {    const zonedDate = new Date(new Date(originalTime * 1000).toLocaleString('en-US', { timeZone }));    return zonedDate.getTime() / 1000;}",
+      "language": "javascript"
+    },
+    {
+      "code": "function timeToLocal(originalTime) {    const d = new Date(originalTime * 1000);    return Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getMilliseconds()) / 1000;}",
+      "language": "javascript"
+    },
+    {
+      "code": "import { utcToZonedTime } from 'date-fns-tz';function timeToTz(originalTime, timeZone) {    const zonedDate = utcToZonedTime(new Date(originalTime * 1000), timeZone);    return zonedDate.getTime() / 1000;}",
+      "language": "javascript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes"
+  ]
+}

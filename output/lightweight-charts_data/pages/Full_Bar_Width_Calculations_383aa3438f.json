@@ -1,0 +1,45 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/full-bar-width",
+  "title": "Full Bar Width Calculations",
+  "content": "It is recommend that you first read the Pixel Perfect Rendering page.\n\nThe following functions can be used to get the calculated width that the library would use for the full width of a bar (data point) at a specific bar spacing and device pixel ratio. This can be used when you would like to use the full width available for each data point on the x axis, and don't want any gaps to be visible.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Full Bar Width Calculations",
+      "id": ""
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "interface BitmapPositionLength {    /** coordinate for use with a bitmap rendering scope */    position: number;    /** length for use with a bitmap rendering scope */    length: number;}/** * Calculates the position and width which will completely full the space for the bar. * Useful if you want to draw something that will not have any gaps between surrounding bars. * @param xMedia - x coordinate of the bar defined in media sizing * @param halfBarSpacingMedia - half the width of the current barSpacing (un-rounded) * @param horizontalPixelRatio - horizontal pixel ratio * @returns position and width which will completely full the space for the bar */export function fullBarWidth(    xMedia: number,    halfBarSpacingMedia: number,    horizontalPixelRatio: number): BitmapPositionLength {    const fullWidthLeftMedia = xMedia - halfBarSpacingMedia;    const fullWidthRightMedia = xMedia + halfBarSpacingMedia;    const fullWidthLeftBitmap = Math.round(        fullWidthLeftMedia * horizontalPixelRatio    );    const fullWidthRightBitmap = Math.round(        fullWidthRightMedia * horizontalPixelRatio    );    const fullWidthBitmap = fullWidthRightBitmap - fullWidthLeftBitmap;    return {        position: fullWidthLeftBitmap,        length: fullWidthBitmap,    };}",
+      "language": "typescript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/full-bar-width",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/series-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/custom_series",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/canvas-rendering-target",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/candlestick",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/columns",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering/widths/crosshair",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes"
+  ]
+}

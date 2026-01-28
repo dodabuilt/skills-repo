@@ -1,0 +1,48 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+  "title": "Enumeration: TrackingModeExitMode",
+  "content": "Determine how to exit the tracking mode.\n\nBy default, mobile users will long press to deactivate the scroll and have the ability to check values and dates. Another press is required to activate the scroll, be able to move left/right, zoom, etc.\n\nTracking Mode will be deactivated on touch end event.\n\nTracking Mode will be deactivated on the next tap event.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Enumeration: TrackingModeExitMode",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Enumeration Members​",
+      "id": "enumeration-members"
+    },
+    {
+      "level": "h3",
+      "text": "OnTouchEnd​",
+      "id": "ontouchend"
+    },
+    {
+      "level": "h3",
+      "text": "OnNextTap​",
+      "id": "onnexttap"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

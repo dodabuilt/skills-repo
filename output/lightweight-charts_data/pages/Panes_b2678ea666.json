@@ -1,0 +1,45 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/panes",
+  "title": "Panes",
+  "content": "Panes are essential elements that help segregate data visually within a single chart. Panes are useful when you have a chart that needs to show more than one kind of data. For example, you might want to see a stock's price over time in one pane and its trading volume in another. This setup helps users get a fuller picture without cluttering the chart.\n\nBy default, Lightweight Charts™ has a single pane, however, you can add more panes to the chart to display different series in separate areas. For detailed examples and code snippets on how to implement panes in your charts see tutorial.\n\nLightweight Charts™ offers a few customization options to tailor the appearance and behavior of panes:\n\nPane Separator Color: Customize the color of the pane separators to match the chart design or improve visibility.\n\nSeparator Hover Color: Enhance user interaction by changing the color of separators on mouse hover.\n\nResizable Panes: Opt to enable or disable the resizing of panes by the user, offering flexibility in how data is displayed.\n\nWhile the specific methods to manipulate panes are covered in the detailed example, it's important to note that Lightweight Charts™ provides an API for pane management. This includes adding new panes, moving series between panes, adjusting pane height, and removing panes. The API ensures that developers have full control over the pane lifecycle and organization within their charts.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Panes",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Customization Options​",
+      "id": "customization-options"
+    },
+    {
+      "level": "h2",
+      "text": "Managing Panes​",
+      "id": "managing-panes"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutPanesOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi"
+  ]
+}

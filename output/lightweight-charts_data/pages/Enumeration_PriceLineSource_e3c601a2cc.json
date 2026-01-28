@@ -1,0 +1,48 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+  "title": "Enumeration: PriceLineSource",
+  "content": "Represents the source of data to be used for the horizontal price line.\n\nUse the last bar data.\n\nUse the last visible data of the chart viewport.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Enumeration: PriceLineSource",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Enumeration Members​",
+      "id": "enumeration-members"
+    },
+    {
+      "level": "h3",
+      "text": "LastBar​",
+      "id": "lastbar"
+    },
+    {
+      "level": "h3",
+      "text": "LastVisible​",
+      "id": "lastvisible"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

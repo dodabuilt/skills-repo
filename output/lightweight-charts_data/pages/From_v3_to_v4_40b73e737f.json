@@ -1,0 +1,136 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v3-to-v4",
+  "title": "From v3 to v4",
+  "content": "In this document you can find the migration guide from the previous version v3 to v4.\n\nPlease use LastPriceAnimationMode instead.\n\nPreviously, you could do something like the following:\n\nAnd scaleMargins option was applied to series' price scale as scaleMargins option.\n\nSince v4 this option won't be applied to the price scale and will be just ignored (if you're using TypeScript you will get a compilation error).\n\nTo fix this, you need to apply these options to series' price scale:\n\nIf you want to have solid background color you need to use background property instead, e.g. instead of:\n\nPlease follow the guide for migrating from v2 to v3 where this option was deprecated.\n\nPlease follow the guide for migrating from v2 to v3.\n\nBefore v4 you could write the following code:\n\nAnd in priceScale you had a right price scale if it is visible and a left price scale otherwise.\n\nSince v4 you have to provide an ID of price scale explicitly, e.g. if you want to get a right price scale you need to provide 'right':\n\nSince v4 you have to use ticksVisible instead of drawTicks.\n\nAlso this option is off by default.\n\nPreviously the type of an inbound time (a values you provide to the library, e.g. in ISeriesApi.setData) was different from an outbound one (a values the library provides to your code, e.g. an argument of LocalizationOptions.timeFormatter). So the difference between types was that outbound time couldn't be a business day string.\n\nSince v4 we improved our API in this matter and now the library will return exactly the same values back for all time-related properties.\n\nThus, if you provide a string to your series in ISeriesApi.setData, you'll receive exactly the same value back:\n\nHandling this breaking change depends on your needs and your handlers, but generally speaking you need to convert provided time to a desired format manually if it is required. For example, you could use provided helpers to check the type of a time:\n\nThe property seriesPrices of MouseEventParams has been removed.\n\nInstead, you can use MouseEventParams.seriesData - it is pretty similar to the old seriesPrices, but it contains series' data items instead of just prices:\n\nSince v4 you have to use hoveredObjectId instead of hoveredMarkerId.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "From v3 to v4",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Exported enum LasPriceAnimationMode has been removed​",
+      "id": "exported-enum-laspriceanimationmode-has-been-removed"
+    },
+    {
+      "level": "h2",
+      "text": "scaleMargins option has been removed from series options​",
+      "id": "scalemargins-option-has-been-removed-from-series-options"
+    },
+    {
+      "level": "h2",
+      "text": "backgroundColor from layout options has been removed​",
+      "id": "backgroundcolor-from-layout-options-has-been-removed"
+    },
+    {
+      "level": "h2",
+      "text": "overlay property of series options has been removed​",
+      "id": "overlay-property-of-series-options-has-been-removed"
+    },
+    {
+      "level": "h2",
+      "text": "priceScale option has been removed​",
+      "id": "pricescale-option-has-been-removed"
+    },
+    {
+      "level": "h2",
+      "text": "priceScale() method of chart API now requires to provide price scale id​",
+      "id": "pricescale-method-of-chart-api-now-requires-to-provide-price-scale-id"
+    },
+    {
+      "level": "h2",
+      "text": "drawTicks from leftPriceScale and rightPriceScale options has been renamed to ticksVisible​",
+      "id": "drawticks-from-leftpricescale-and-rightpricescale-options-has-been-renamed-to-ticksvisible"
+    },
+    {
+      "level": "h2",
+      "text": "The type of outbound time values has been changed​",
+      "id": "the-type-of-outbound-time-values-has-been-changed"
+    },
+    {
+      "level": "h2",
+      "text": "seriesPrices property from MouseEventParams has been removed​",
+      "id": "seriesprices-property-from-mouseeventparams-has-been-removed"
+    },
+    {
+      "level": "h2",
+      "text": "MouseEventParams field hoveredMarkerId was renamed to hoveredObjectId​",
+      "id": "mouseeventparams-field-hoveredmarkerid-was-renamed-to-hoveredobjectid"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "const series = chart.addLineSeries({    scaleMargins: { /* options here */},});",
+      "language": "css"
+    },
+    {
+      "code": "const series = chart.addLineSeries();series.priceScale().applyOptions({    scaleMargins: { /* options here */},});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = createChart({    layout: {        backgroundColor: 'red',    },});",
+      "language": "css"
+    },
+    {
+      "code": "const chart = createChart({    layout: {        background: {            type: ColorType.Solid,            color: 'red',        },    },});",
+      "language": "css"
+    },
+    {
+      "code": "const priceScale = chart.priceScale();",
+      "language": "javascript"
+    },
+    {
+      "code": "const rightPriceScale = chart.priceScale('right');const leftPriceScale = chart.priceScale('left');",
+      "language": "javascript"
+    },
+    {
+      "code": "const chart = createChart({    leftPriceScale: {        ticksVisible: false,    },    rightPriceScale: {        ticksVisible: false,    },});",
+      "language": "css"
+    },
+    {
+      "code": "series.setData([    { time: '2001-01-01', value: 1 },]);chart.applyOptions({    localization: {        timeFormatter: time => time, // will be '2001-01-01' for the bar above    },    timeScale: {        tickMarkFormatter: time => time, // will be '2001-01-01' for the bar above    },});chart.subscribeCrosshairMove(param => {    console.log(param.time); // will be '2001-01-01' if you hover the bar above});chart.subscribeClick(param => {    console.log(param.time); // will be '2001-01-01' if you click on the bar above});",
+      "language": "typescript"
+    },
+    {
+      "code": "import {    createChart,    isUTCTimestamp,    isBusinessDay,} from 'lightweight-charts';const chart = createChart(document.body);chart.subscribeClick(param => {    if (param.time === undefined) {        // the time is undefined, i.e. there is no any data point where a time could be received from        return;    }    if (isUTCTimestamp(param.time)) {        // param.time is UTCTimestamp    } else if (isBusinessDay(param.time)) {        // param.time is a BusinessDay object    } else {        // param.time is a business day string in ISO format, e.g. `'2010-01-01'`    }});",
+      "language": "sql"
+    },
+    {
+      "code": "lineSeries.setData([{ time: '2001-01-01', value: 1 }]);barSeries.setData([{ time: '2001-01-01', open: 5, high: 10, low: 1, close: 7 }]);chart.subscribeCrosshairMove(param => {    console.log(param.seriesData.get(lineSeries)); // { time: '2001-01-01', value: 1 } or undefined    console.log(param.seriesData.get(barSeries)); // { time: '2001-01-01', open: 5, high: 10, low: 1, close: 7 } or undefined});",
+      "language": "javascript"
+    },
+    {
+      "code": "chart.subscribeCrosshairMove(param => {    console.log(param.hoveredObjectId);});chart.subscribeClick(param => {    console.log(param.hoveredObjectId);});",
+      "language": "javascript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v3-to-v4",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v4-to-v5",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LayoutOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IChartApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/MouseEventParams",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/LocalizationOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TimeFormatterFn",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/TickMarkFormatter",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/ISeriesApi"
+  ]
+}

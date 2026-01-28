@@ -1,0 +1,69 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/android",
+  "title": "Android wrapper",
+  "content": "You can find the source code of the Lightweight Charts™ Android wrapper in this repository.\n\nThis wrapper is currently still using v3.8.0. This will be updated to v4.0.0 in the near future.\n\nYou can use Lightweight Charts™ inside an Android application. To use Lightweight Charts™ in that context, you can use our Android wrapper, which will allow you to interact with Lightweight Charts™ library, which will be rendered in a web view.\n\nRequires minSdkVersion 21, and installed WebView with support of ES6\n\nIn /gradle_module/build.gradle\n\nAdd view to the layout.\n\nConfigure the chart layout.\n\nAdd any series to the chart and store a reference to it.\n\nAdd data to the series.\n\nThe GitHub repository for lightweight-charts-android contains an example of the library in action. You can run the example (LighweightCharts.app) by cloning the repository and opening it in Android Studio. You will need to have NodeJS/NPM installed.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Android wrapper",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Installation​",
+      "id": "installation"
+    },
+    {
+      "level": "h2",
+      "text": "Usage​",
+      "id": "usage"
+    },
+    {
+      "level": "h2",
+      "text": "How to run the provided example​",
+      "id": "how-to-run-the-provided-example"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "allprojects {    repositories {        google()        mavenCentral()    }}",
+      "language": "unknown"
+    },
+    {
+      "code": "dependencies {    //...    implementation 'com.tradingview:lightweightcharts:3.8.0'}",
+      "language": "json"
+    },
+    {
+      "code": "<androidx.constraintlayout.widget.ConstraintLayout        android:layout_width=\"match_parent\"        android:layout_height=\"match_parent\">        <com.tradingview.lightweightcharts.view.ChartsView            android:id=\"@+id/charts_view\"            android:layout_width=\"0dp\"            android:layout_height=\"0dp\"            app:layout_constraintBottom_toBottomOf=\"parent\"            app:layout_constraintLeft_toLeftOf=\"parent\"            app:layout_constraintRight_toRightOf=\"parent\"            app:layout_constraintTop_toTopOf=\"parent\" /></androidx.constraintlayout.widget.ConstraintLayout>",
+      "language": "xml"
+    },
+    {
+      "code": "charts_view.api.applyOptions {    layout = layoutOptions {        background = SolidColor(Color.LTGRAY)        textColor = Color.BLACK.toIntColor()    }    localization = localizationOptions {        locale = \"ru-RU\"        priceFormatter = PriceFormatter(template = \"{price:#2:#3}$\")        timeFormatter = TimeFormatter(            locale = \"ru-RU\",            dateTimeFormat = DateTimeFormat.DATE_TIME        )    }}",
+      "language": "kotlin"
+    },
+    {
+      "code": "lateinit var histogramSeries: SeriesApicharts_view.api.addHistogramSeries(    onSeriesCreated = { series ->        histogramSeries = series    })",
+      "language": "kotlin"
+    },
+    {
+      "code": "val data = listOf(    HistogramData(Time.BusinessDay(2019, 6, 11), 40.01f),    HistogramData(Time.BusinessDay(2019, 6, 12), 52.38f),    HistogramData(Time.BusinessDay(2019, 6, 13), 36.30f),    HistogramData(Time.BusinessDay(2019, 6, 14), 34.48f),    WhitespaceData(Time.BusinessDay(2019, 6, 15)),    WhitespaceData(Time.BusinessDay(2019, 6, 16)),    HistogramData(Time.BusinessDay(2019, 6, 17), 41.50f),    HistogramData(Time.BusinessDay(2019, 6, 18), 34.82f))histogramSeries.setData(data)",
+      "language": "kotlin"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes"
+  ]
+}

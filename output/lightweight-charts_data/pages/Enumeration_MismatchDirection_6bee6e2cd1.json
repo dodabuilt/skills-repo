@@ -1,0 +1,54 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+  "title": "Enumeration: MismatchDirection",
+  "content": "Search direction if no data found at provided index\n\nSearch the nearest left item\n\nSearch the nearest right item",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Enumeration: MismatchDirection",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Enumeration Members​",
+      "id": "enumeration-members"
+    },
+    {
+      "level": "h3",
+      "text": "NearestLeft​",
+      "id": "nearestleft"
+    },
+    {
+      "level": "h3",
+      "text": "None​",
+      "id": "none"
+    },
+    {
+      "level": "h3",
+      "text": "NearestRight​",
+      "id": "nearestright"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

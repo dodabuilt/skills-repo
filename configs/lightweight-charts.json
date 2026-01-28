@@ -1,0 +1,21 @@
+{
+  "name": "lightweight-charts",
+  "description": "TradingView Lightweight Charts - A free, lightweight, and performant financial charting library for creating interactive stock/crypto charts",
+  "base_url": "https://tradingview.github.io/lightweight-charts/docs",
+  "selectors": {
+    "main_content": "article",
+    "title": "h1",
+    "code_blocks": "pre code"
+  },
+  "url_patterns": {
+    "include": ["/lightweight-charts/docs"],
+    "exclude": ["/3.7.0/", "/3.8/", "/4.0/", "/4.1/", "/4.2/", "/5.0/", "/next/"]
+  },
+  "categories": {
+    "api": ["/api/"],
+    "guides": ["/docs/series", "/docs/chart", "/docs/price", "/docs/time", "/docs/panes", "/docs/plugins"],
+    "tutorials": ["/tutorials/"]
+  },
+  "rate_limit": 0.2,
+  "max_pages": 500
+}

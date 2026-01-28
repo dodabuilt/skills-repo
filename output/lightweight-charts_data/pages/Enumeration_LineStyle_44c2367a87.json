@@ -1,0 +1,63 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+  "title": "Enumeration: LineStyle",
+  "content": "Represents the possible line styles.\n\nA dashed line with bigger dashes.\n\nA dotted line with more space between dots.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Enumeration: LineStyle",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Enumeration Members​",
+      "id": "enumeration-members"
+    },
+    {
+      "level": "h3",
+      "text": "Solid​",
+      "id": "solid"
+    },
+    {
+      "level": "h3",
+      "text": "Dotted​",
+      "id": "dotted"
+    },
+    {
+      "level": "h3",
+      "text": "Dashed​",
+      "id": "dashed"
+    },
+    {
+      "level": "h3",
+      "text": "LargeDashed​",
+      "id": "largedashed"
+    },
+    {
+      "level": "h3",
+      "text": "SparseDotted​",
+      "id": "sparsedotted"
+    }
+  ],
+  "code_samples": [],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineStyle",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/ColorType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/CrosshairMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LastPriceAnimationMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/LineType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MismatchDirection",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceLineSource",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/PriceScaleMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TickMarkType",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/TrackingModeExitMode",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart"
+  ]
+}

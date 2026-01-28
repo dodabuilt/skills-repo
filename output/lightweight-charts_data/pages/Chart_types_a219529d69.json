@@ -1,0 +1,92 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+  "title": "Chart types",
+  "content": "Lightweight Charts offers different types of charts to suit various data visualization needs. This article provides an overview of the available chart types and how to create them.\n\nThe standard time-based chart is the most common type, suitable for displaying time series data.\n\nThis chart type uses time values for the horizontal scale and is ideal for most financial and time series data visualizations.\n\nThe yield curve chart is specifically designed for displaying yield curves, common in financial analysis.\n\nUse this chart type when you need to visualize yield curves or similar financial data where the horizontal scale represents time durations rather than specific dates.\n\nIf you want to spread out the beginning of the plot further and don't need a linear time scale, you can enforce a minimum spacing around each point by increasing the minBarSpacing option in the TimeScaleOptions. To prevent the rest of the chart from spreading too wide, adjust the baseResolution to a larger number, such as 12 (months).\n\nThe options chart is a specialized type that uses price values on the horizontal scale instead of time.\n\nThis chart type is particularly useful for financial instruments like options, where the price is a more relevant x-axis metric than time.\n\nFor advanced use cases, Lightweight Charts allows creating charts with custom horizontal scale behavior.\n\nThis method provides the flexibility to define custom horizontal scale behavior, allowing for unique and specialized chart types.\n\nEach chart type provides specific functionality and is optimized for different use cases. Consider your data structure and visualization requirements when selecting the appropriate chart type for your application.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Chart types",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Standard Time-based Chart​",
+      "id": "standard-time-based-chart"
+    },
+    {
+      "level": "h2",
+      "text": "Yield Curve Chart​",
+      "id": "yield-curve-chart"
+    },
+    {
+      "level": "h2",
+      "text": "Options Chart (Price-based)​",
+      "id": "options-chart-price-based"
+    },
+    {
+      "level": "h2",
+      "text": "Custom Horizontal Scale Chart​",
+      "id": "custom-horizontal-scale-chart"
+    },
+    {
+      "level": "h2",
+      "text": "Choosing the Right Chart Type​",
+      "id": "choosing-the-right-chart-type"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "import { createChart } from 'lightweight-charts';const chart = createChart(document.getElementById('container'), options);",
+      "language": "sql"
+    },
+    {
+      "code": "const chartOptions = { layout: { textColor: 'black', background: { type: 'solid', color: 'white' } } };const chart = createChart(document.getElementById('container'), chartOptions);const areaSeries = chart.addSeries(AreaSeries, { lineColor: '#2962FF', topColor: '#2962FF', bottomColor: 'rgba(41, 98, 255, 0.28)' });const data = [{ value: 0, time: 1642425322 }, { value: 8, time: 1642511722 }, { value: 10, time: 1642598122 }, { value: 20, time: 1642684522 }, { value: 3, time: 1642770922 }, { value: 43, time: 1642857322 }, { value: 41, time: 1642943722 }, { value: 43, time: 1643030122 }, { value: 56, time: 1643116522 }, { value: 46, time: 1643202922 }];areaSeries.setData(data);chart.timeScale().fitContent();",
+      "language": "css"
+    },
+    {
+      "code": "import { createYieldCurveChart } from 'lightweight-charts';const chart = createYieldCurveChart(document.getElementById('container'), options);",
+      "language": "sql"
+    },
+    {
+      "code": "const chartOptions = {    layout: { textColor: 'black', background: { type: 'solid', color: 'white' } },    yieldCurve: { baseResolution: 1, minimumTimeRange: 10, startTimeRange: 3 },    handleScroll: false, handleScale: false,};const chart = createYieldCurveChart(document.getElementById('container'), chartOptions);const lineSeries = chart.addSeries(LineSeries, { color: '#2962FF' });const curve = [{ time: 1, value: 5.378 }, { time: 2, value: 5.372 }, { time: 3, value: 5.271 }, { time: 6, value: 5.094 }, { time: 12, value: 4.739 }, { time: 24, value: 4.237 }, { time: 36, value: 4.036 }, { time: 60, value: 3.887 }, { time: 84, value: 3.921 }, { time: 120, value: 4.007 }, { time: 240, value: 4.366 }, { time: 360, value: 4.290 }];lineSeries.setData(curve);chart.timeScale().fitContent();",
+      "language": "css"
+    },
+    {
+      "code": "import { createOptionsChart } from 'lightweight-charts';const chart = createOptionsChart(document.getElementById('container'), options);",
+      "language": "sql"
+    },
+    {
+      "code": "const chartOptions = {    layout: { textColor: 'black', background: { type: 'solid', color: 'white' } },};const chart = createOptionsChart(document.getElementById('container'), chartOptions);const lineSeries = chart.addSeries(LineSeries, { color: '#2962FF' });const data = [];for (let i = 0; i < 1000; i++) {    data.push({        time: i * 0.25,        value: Math.sin(i / 100) + i / 500,    });}lineSeries.setData(data);chart.timeScale().fitContent();",
+      "language": "javascript"
+    },
+    {
+      "code": "import { createChartEx, defaultHorzScaleBehavior } from 'lightweight-charts';const customBehavior = new (defaultHorzScaleBehavior())();// Customize the behavior as neededconst chart = createChartEx(document.getElementById('container'), customBehavior, options);",
+      "language": "typescript"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TimeScaleOptions",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx"
+  ]
+}

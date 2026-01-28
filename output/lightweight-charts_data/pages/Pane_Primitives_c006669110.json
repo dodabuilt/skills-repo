@@ -1,0 +1,74 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives",
+  "title": "Pane Primitives",
+  "content": "In addition to Series Primitives, the library now supports Pane Primitives. These are essentially the same as Series Primitives but are designed to draw on the pane of a chart rather than being associated with a specific series. Pane Primitives can be used for features like watermarks or other chart-wide annotations.\n\nPane Primitives can be added to a chart using the attachPrimitive method on the IPaneApi interface. Here's an example:\n\nTo create a Pane Primitive, you should implement the IPanePrimitive interface. This interface is similar to ISeriesPrimitive, but with some key differences:\n\nHere's a basic example of a Pane Primitive implementation:\n\nFor more details on implementing Pane Primitives, refer to the IPanePrimitive interface documentation.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Pane Primitives",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Key Differences from Series Primitives​",
+      "id": "key-differences-from-series-primitives"
+    },
+    {
+      "level": "h2",
+      "text": "Adding a Pane Primitive​",
+      "id": "adding-a-pane-primitive"
+    },
+    {
+      "level": "h2",
+      "text": "Implementing a Pane Primitive​",
+      "id": "implementing-a-pane-primitive"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "const chart = createChart(document.getElementById('container'));const pane = chart.panes()[0]; // Get the first (main) paneconst myPanePrimitive = new MyCustomPanePrimitive();pane.attachPrimitive(myPanePrimitive);",
+      "language": "javascript"
+    },
+    {
+      "code": "class MyCustomPanePrimitive {    paneViews() {        return [            {                renderer: {                    draw: target => {                        // Custom drawing logic here                    },                },            },        ];    }    // Other methods as needed...}",
+      "language": "javascript"
+    }
+  ],
+  "patterns": [
+    {
+      "description": "Pane Primitives In addition to Series Primitives, the library now supports Pane Primitives. These are essentially the same as Series Primitives but are designed to draw on the pane of a chart rather than being associated with a specific series. Pane Primitives can be used for features like watermarks or other chart-wide annotations. Key Differences from Series Primitives​ Pane Primitives are attached to the chart pane rather than a specific series. They cannot draw on the price and time scales. They are ideal for chart-wide features that are not tied to a particular series. Adding a Pane Primitive​ Pane Primitives can be added to a chart using the attachPrimitive method on the IPaneApi interface. Here's an example: const chart = createChart(document.getElementById('container'));const pane = chart.panes()[0]; // Get the first (main) paneconst myPanePrimitive = new MyCustomPanePrimitive();pane.attachPrimitive(myPanePrimitive); Implementing a Pane Primitive​ To create a Pane Primitive, you should implement the IPanePrimitive interface. This interface is similar to ISeriesPrimitive, but with some key differences: It doesn't include methods for drawing on price and time scales. The paneViews method is used to define what will be drawn on the chart pane. Here's a basic example of a Pane Primitive implementation: class MyCustomPanePrimitive { paneViews() { return [ { renderer: { draw: target => { // Custom drawing logic here }, }, }, ]; } // Other methods as needed...} For more details on implementing Pane Primitives, refer to the IPanePrimitive interface documentation.",
+      "code": "attachPrimitive"
+    },
+    {
+      "description": "Pane Primitives can be added to a chart using the attachPrimitive method on the IPaneApi interface. Here's an example:",
+      "code": "attachPrimitive"
+    }
+  ],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pane-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/series-types",
+    "https://tradingview.github.io/lightweight-charts/docs/chart-types",
+    "https://tradingview.github.io/lightweight-charts/docs/price-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/time-scale",
+    "https://tradingview.github.io/lightweight-charts/docs/panes",
+    "https://tradingview.github.io/lightweight-charts/docs/time-zones",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/intro",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/series-primitives",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/custom_series",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/canvas-rendering-target",
+    "https://tradingview.github.io/lightweight-charts/docs/plugins/pixel-perfect-rendering",
+    "https://tradingview.github.io/lightweight-charts/docs/migrations/from-v2-to-v3",
+    "https://tradingview.github.io/lightweight-charts/docs/ios",
+    "https://tradingview.github.io/lightweight-charts/docs/android",
+    "https://tradingview.github.io/lightweight-charts/docs/release-notes",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/IPanePrimitive",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ISeriesPrimitive"
+  ]
+}

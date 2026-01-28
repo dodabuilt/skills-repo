@@ -1,0 +1,67 @@
+{
+  "url": "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+  "title": "Function: createTextWatermark()",
+  "content": "createTextWatermark<T>(pane, options): ITextWatermarkPluginApi<T>\n\nCreates an image watermark.\n\n• options: DeepPartial <TextWatermarkOptions>\n\nITextWatermarkPluginApi<T>\n\nImage watermark wrapper.",
+  "headings": [
+    {
+      "level": "h1",
+      "text": "Function: createTextWatermark()",
+      "id": ""
+    },
+    {
+      "level": "h2",
+      "text": "Type parameters​",
+      "id": "type-parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Parameters​",
+      "id": "parameters"
+    },
+    {
+      "level": "h2",
+      "text": "Returns​",
+      "id": "returns"
+    },
+    {
+      "level": "h2",
+      "text": "Example​",
+      "id": "example"
+    }
+  ],
+  "code_samples": [
+    {
+      "code": "import { createTextWatermark } from 'lightweight-charts';const firstPane = chart.panes()[0];const textWatermark = createTextWatermark(firstPane, {      horzAlign: 'center',      vertAlign: 'center',      lines: [        {          text: 'Hello',          color: 'rgba(255,0,0,0.5)',          fontSize: 100,          fontStyle: 'bold',        },        {          text: 'This is a text watermark',          color: 'rgba(0,0,255,0.5)',          fontSize: 50,          fontStyle: 'italic',          fontFamily: 'monospace',        },      ],});// to change optionstextWatermark.applyOptions({ horzAlign: 'left' });// to remove watermark from the panetextWatermark.detach();",
+      "language": "sql"
+    }
+  ],
+  "patterns": [],
+  "links": [
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createTextWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs",
+    "https://tradingview.github.io/lightweight-charts/docs/api",
+    "https://tradingview.github.io/lightweight-charts/docs/4.2",
+    "https://tradingview.github.io/lightweight-charts/docs/4.1",
+    "https://tradingview.github.io/lightweight-charts/docs/4.0",
+    "https://tradingview.github.io/lightweight-charts/docs/3.8",
+    "https://tradingview.github.io/lightweight-charts/docs/api/enumerations/MarkerSign",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/AreaData",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/AlphaComponent",
+    "https://tradingview.github.io/lightweight-charts/docs/api/variables/AreaSeries",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createChartEx",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createImageWatermark",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createOptionsChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createSeriesMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createUpDownMarkers",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/createYieldCurveChart",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/defaultHorzScaleBehavior",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isBusinessDay",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/isUTCTimestamp",
+    "https://tradingview.github.io/lightweight-charts/docs/api/functions/version",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/ITextWatermarkPluginApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/IPaneApi",
+    "https://tradingview.github.io/lightweight-charts/docs/api/type-aliases/DeepPartial",
+    "https://tradingview.github.io/lightweight-charts/docs/api/interfaces/TextWatermarkOptions"
+  ]
+}
