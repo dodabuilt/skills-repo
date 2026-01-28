@@ -1,0 +1,19 @@
+{
+  "name": "dodabuilt-skills",
+  "description": "AI Skills marketplace - Documentation-generated skills for Claude Code",
+  "plugins": [
+    {
+      "name": "skills-repo",
+      "description": "AI Skills generated from documentation - includes TradingView Lightweight Charts and more",
+      "version": "1.0.0",
+      "author": "dodabuilt",
+      "repository": "https://github.com/dodabuilt/skills-repo",
+      "skills": [
+        {
+          "name": "lightweight-charts",
+          "description": "TradingView Lightweight Charts - A free, lightweight financial charting library"
+        }
+      ]
+    }
+  ]
+}
