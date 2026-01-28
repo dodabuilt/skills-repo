@@ -1,6 +1,6 @@
 {
-  "name": "ai-skills",
-  "description": "A collection of AI skills generated from official documentation - giving AI assistants deep knowledge of libraries, frameworks, and tools",
+  "name": "ibkr-engineering-skills",
+  "description": "IBKR engineering skill set for rapid UI development using Ratio UI, PrimeVue, TanStack Query, Fluidity microfrontends, and the IBKR design system",
   "version": "1.0.0",
   "author": {
     "name": "dodabuilt"
@@ -12,10 +12,32 @@
   },
   "license": "MIT",
   "keywords": [
+    "ibkr",
+    "ratio-ui",
+    "primevue",
+    "vue3",
+    "tanstack-query",
+    "fluidity",
+    "microfrontend",
+    "design-system",
     "ai-skills",
-    "documentation",
-    "claude",
-    "cursor",
-    "llm"
+    "claude-code"
+  ],
+  "skills": [
+    {
+      "name": "ibkr-development",
+      "path": "skills/ibkr-development/SKILL.md",
+      "description": "Core IBKR development skill - Ratio UI, semantic tokens, PrimeVue components, Fluidity patterns, IBFonts"
+    },
+    {
+      "name": "tanstack-query-vue",
+      "path": "skills/tanstack-query-vue/SKILL.md",
+      "description": "TanStack Query for Vue 3 Composition API - data fetching, caching, mutations, server state"
+    },
+    {
+      "name": "lightweight-charts",
+      "path": "skills/lightweight-charts/SKILL.md",
+      "description": "TradingView Lightweight Charts - candlestick, line, area, histogram charts"
+    }
   ]
 }

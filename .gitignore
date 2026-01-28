@@ -2,6 +2,12 @@
 *.pyc
 __pycache__/
 .env
+node_modules/
 
 # Packaged skill zips (we only commit extracted folders)
 *.zip
+
+# Working/scratch files
+work/
+configs/
+output/

@@ -1,212 +1,154 @@
-# AI Skills Repository
+# IBKR Engineering Skills
 
-A curated collection of AI skills that give language models deep knowledge of libraries, frameworks, and tools. Skills are generated from official documentation using [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers).
+A curated skill set for AI-assisted IBKR frontend development with **Claude Code**. These skills constrain Claude to use **only** the approved design system, components, and patterns.
 
-## Table of Contents
+## What's Included
 
-- [What are AI Skills?](#what-are-ai-skills)
-- [Available Skills](#available-skills)
-  - [Charting](#charting)
-  - [Frontend](#frontend)
-  - [Backend](#backend)
-  - [DevOps](#devops)
-  - [Databases](#databases)
-  - [AI/ML](#aiml)
-- [Usage](#usage)
-  - [Claude Code Plugin](#option-1-claude-code-plugin)
-  - [Upload to Claude.ai](#option-2-upload-to-claudeai)
-  - [Copy to Project](#option-3-copy-to-project)
-  - [Cursor AI](#option-4-cursor-ai)
-- [Creating New Skills](#creating-new-skills)
-- [Repository Structure](#repository-structure)
-- [Contributing](#contributing)
+| Skill | Purpose |
+|-------|---------|
+| **ibkr-development** | Core skill - Ratio UI, semantic tokens, PrimeVue, Fluidity, IBFonts |
+| **tanstack-query-vue** | Data fetching with TanStack Query (Vue 3 Composition API) |
+| **lightweight-charts** | TradingView charting library integration |
 
----
+## Installation
 
-## What are AI Skills?
+### Option 1: Global Installation (All Projects)
 
-AI Skills are structured knowledge packages that help AI assistants (Claude, Cursor, ChatGPT, etc.) understand and work with specific technologies. Each skill contains:
+Install as a Claude Code plugin for all your projects:
 
-- **SKILL.md** - Quick reference with common patterns and examples
-- **references/** - Comprehensive API documentation and guides
-- **Packaged .zip** - Ready to upload to Claude.ai or other platforms
+```bash
+# Clone to your Claude plugins directory
+git clone https://github.com/dodabuilt/skills-repo.git ~/.claude/plugins/ibkr-skills
+```
 
----
+The plugin is now available globally. Claude Code will automatically discover and use these skills.
 
-## Available Skills
+### Option 2: Per-Project Installation
 
-### Charting
+Add skills to a specific project:
 
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| [Lightweight Charts](skills/lightweight-charts/) | TradingView financial charting library for interactive stock, crypto, and forex charts | 5.1 | [Source](https://tradingview.github.io/lightweight-charts/docs) |
+```bash
+# From your project root
+mkdir -p .claude/skills
+git clone https://github.com/dodabuilt/skills-repo.git .claude/skills/ibkr
+```
 
-### Frontend
+Or add as a git submodule:
+```bash
+git submodule add https://github.com/dodabuilt/skills-repo.git .claude/skills/ibkr
+```
 
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| *Coming soon* | | | |
+### Option 3: Symlink (Best for Development)
 
-### Backend
+```bash
+# Clone once
+git clone https://github.com/dodabuilt/skills-repo.git ~/skills-repo
 
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| *Coming soon* | | | |
+# Symlink to Claude plugins
+ln -s ~/skills-repo ~/.claude/plugins/ibkr-skills
 
-### DevOps
+# Or symlink to a specific project
+ln -s ~/skills-repo/.claude/skills/ibkr /path/to/project/.claude/skills/ibkr
+```
 
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| *Coming soon* | | | |
+## Verify Installation
 
-### Databases
+After installing, run Claude Code and ask:
+```
+What skills do you have available for IBKR development?
+```
 
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| *Coming soon* | | | |
-
-### AI/ML
-
-| Skill | Description | Version | Docs |
-|-------|-------------|---------|------|
-| *Coming soon* | | | |
-
----
+Claude should list the installed skills.
 
 ## Usage
 
-### Option 1: Claude Code Plugin
+Once installed, Claude will automatically use these skills when you:
 
-Load as a Claude Code plugin to get skills automatically:
+- Ask to build UI components
+- Work with Ratio UI or PrimeVue
+- Implement Figma designs
+- Fetch data from APIs
+- Create charts or data visualizations
+
+### Trigger Keywords
+
+The skills activate on mentions of:
+- `Ratio`, `PrimeVue`, `IBKR`, `trading UI`
+- `semantic tokens`, `design system`
+- `Fluidity`, `microfrontend`
+- `useQuery`, `useMutation`, `TanStack Query`
+- `lightweight-charts`, `candlestick`
+
+### Example Prompts
+
+```
+Build a positions table using Ratio UI that fetches data from /api/positions
+```
+
+```
+Create a trading card component with buy/sell buttons following the IBKR design system
+```
+
+```
+Implement this Figma design using our component library
+```
+
+## What the Skills Enforce
+
+### Always Use
+- Semantic color tokens (`bg-surface`, `text-on-surface`, `border-accent`)
+- PrimeVue components with Ratio presets
+- TanStack Query for all data fetching
+- IBFonts for icons (`ibi-*` classes)
+- Ratio UI composables (`useDevice`, `useLocale`, `useNum`, etc.)
+
+### Never Use
+- Arbitrary Tailwind values (`w-[200px]`, `text-[14px]`)
+- Hex colors or standard Tailwind colors (`bg-blue-500`)
+- Custom SVGs or third-party icon libraries
+- Manual `fetch()` + `ref()` patterns
+- Custom components when PrimeVue/Ratio has one
+
+## Updating Skills
 
 ```bash
-claude --plugin-dir /path/to/skills-repo
+cd ~/.claude/plugins/ibkr-skills  # or wherever you cloned
+git pull origin main
 ```
 
-### Option 2: Upload to Claude.ai
-
-1. Go to [Claude.ai Skills](https://claude.ai/skills)
-2. Click "Upload Skill"
-3. Select a `.zip` file from `skills/`
-
-### Option 3: Copy to Project
-
-Copy a skill folder to your project's `.claude/skills/` directory:
-
-```bash
-cp -r skills/lightweight-charts ~/.claude/skills/
-```
-
-### Option 4: Cursor AI
-
-Add skills to your Cursor workspace:
-
-```bash
-cp -r skills/lightweight-charts /path/to/project/.cursor/skills/
-```
-
----
-
-## Creating New Skills
-
-### 1. Create a Configuration
-
-Create `work/configs/<skill-name>.json`:
-
-```json
-{
-  "name": "my-skill",
-  "description": "Description of the library/framework",
-  "base_url": "https://docs.example.com",
-  "selectors": {
-    "main_content": "article",
-    "title": "h1",
-    "code_blocks": "pre code"
-  },
-  "url_patterns": {
-    "include": ["/docs"],
-    "exclude": ["/blog", "/old-version"]
-  },
-  "categories": {
-    "api": ["/api/"],
-    "guides": ["/guide/", "/tutorial/"]
-  },
-  "max_pages": 200,
-  "rate_limit": 0.3
-}
-```
-
-### 2. Scrape Documentation
-
-```bash
-skill-seekers scrape --config work/configs/my-skill.json
-```
-
-### 3. Package the Skill
-
-```bash
-skill-seekers package work/output/my-skill/ --no-open
-```
-
-### 4. Add to Skills Directory
-
-```bash
-cp work/output/my-skill.zip skills/
-cp -r work/output/my-skill skills/
-```
-
-### 5. Update Marketplace & README
-
-Add the new skill to `marketplace.json` and update this README.
-
----
-
-## Repository Structure
+## Skill Structure
 
 ```
-ai-skills/
-├── .claude-plugin/          # Claude Code plugin configuration
-│   └── plugin.json
-├── skills/                  # 📦 Ready-to-use skills
-│   ├── <skill-name>/        # Each skill has its own folder
-│   │   ├── SKILL.md         # Quick reference & examples
-│   │   └── references/      # Full documentation
-│   └── <skill-name>.zip     # Packaged for upload
-├── work/                    # 🔧 Working directory
-│   ├── configs/             # Scraper configurations
-│   └── output/              # Raw scraper output
-├── marketplace.json         # Plugin marketplace manifest
+skills-repo/
+├── .claude-plugin/
+│   └── plugin.json                 # Plugin manifest
+├── skills/
+│   ├── ibkr-development/
+│   │   ├── SKILL.md                # Main skill file
+│   │   └── references/
+│   │       ├── semantic-tokens.md  # All color tokens
+│   │       ├── ratio-components.md # Component reference
+│   │       ├── fluidity-patterns.md# Microfrontend patterns
+│   │       └── ibfonts.md          # Icon library
+│   ├── tanstack-query-vue/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── api.md              # Full API reference
+│   └── lightweight-charts/
+│       ├── SKILL.md
+│       └── references/
+│           └── ...
 └── README.md
 ```
 
----
-
-## Skill Ideas
-
-Want to contribute? Here are some libraries that would make great skills:
-
-| Category | Libraries |
-|----------|-----------|
-| **Frontend** | React, Vue, Svelte, Angular, Tailwind CSS, Shadcn/ui, Three.js, D3.js |
-| **Backend** | FastAPI, Express, NestJS, Hono, Elysia |
-| **Databases** | Prisma, Drizzle, TypeORM, Supabase |
-| **DevOps** | Docker, Kubernetes, Terraform, GitHub Actions |
-| **AI/ML** | LangChain, LlamaIndex, Hugging Face, Vercel AI SDK |
-
----
-
 ## Contributing
 
-1. Fork this repository
-2. Create a skill using the steps above
-3. Submit a pull request
+To add or update skills:
 
----
+1. Edit the relevant `SKILL.md` or reference files
+2. Test with Claude Code to verify the skill activates correctly
+3. Submit a PR
 
 ## License
 
-MIT - Feel free to use, modify, and distribute.
-
----
-
-Built with [skill-seekers](https://github.com/yusufkaraaslan/Skill_Seekers) 🔍
+MIT
