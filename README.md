@@ -24,13 +24,7 @@ Add this repo as a marketplace, then install the plugin:
 /plugin install ibkr-engineering-skills@dodabuilt-skills-repo
 ```
 
-### Option 2: Direct Install from GitHub
-
-```bash
-/plugin install dodabuilt/skills-repo
-```
-
-### Option 3: Local Development/Testing
+### Option 2: Local Development/Testing
 
 Clone and load directly with `--plugin-dir`:
 
@@ -42,9 +36,9 @@ git clone https://github.com/dodabuilt/skills-repo.git ~/skills-repo
 claude --plugin-dir ~/skills-repo
 ```
 
-### Option 4: Per-Project Installation
+### Option 3: Per-Project Configuration
 
-Add to a specific project's `.claude/settings.json`:
+Add to your project's `.claude/settings.json`:
 
 ```json
 {
@@ -55,25 +49,25 @@ Add to a specific project's `.claude/settings.json`:
 
 ## Verify Installation
 
-After installing, run in Claude Code:
+After installing, run:
 
-```
+```bash
 /plugin
 ```
 
 Go to the **Installed** tab - you should see `ibkr-engineering-skills`.
 
-Or test with:
+Or ask Claude:
 ```
-What IBKR development skills do you have?
+What skills do you have for IBKR development?
 ```
 
 ## Usage
 
-Once installed, Claude automatically uses these skills when relevant. Skills are namespaced:
+Once installed, Claude automatically uses these skills when relevant. Skills are namespaced by plugin:
 
 ```bash
-# Invoke directly (optional - Claude uses them automatically)
+# Direct invocation (optional - skills trigger automatically)
 /ibkr-engineering-skills:ibkr-development
 /ibkr-engineering-skills:tanstack-query-vue
 /ibkr-engineering-skills:lightweight-charts
@@ -112,10 +106,10 @@ Create a candlestick chart for AAPL with volume histogram
 ## Updating
 
 ```bash
-# If using marketplace:
+# Update marketplace catalog
 /plugin marketplace update dodabuilt-skills-repo
 
-# If using local clone:
+# Or if using local clone
 cd ~/skills-repo && git pull
 ```
 
@@ -124,11 +118,12 @@ cd ~/skills-repo && git pull
 ```
 skills-repo/
 ├── .claude-plugin/
-│   └── plugin.json              # Plugin manifest
+│   ├── plugin.json              # Plugin metadata
+│   └── marketplace.json         # Marketplace catalog
 ├── skills/
 │   ├── ibkr-development/
-│   │   ├── SKILL.md             # Main skill
-│   │   └── references/
+│   │   ├── SKILL.md             # Main skill instructions
+│   │   └── references/          # Supporting documentation
 │   │       ├── semantic-tokens.md
 │   │       ├── ratio-components.md
 │   │       ├── fluidity-patterns.md

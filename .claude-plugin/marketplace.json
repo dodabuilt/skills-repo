@@ -1,12 +1,18 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "dodabuilt-skills-repo",
-  "description": "IBKR engineering skills for Claude Code - Ratio UI, TanStack Query, Lightweight Charts",
+  "version": "1.0.0",
+  "description": "IBKR engineering skills for rapid frontend development with Ratio UI, TanStack Query, and Lightweight Charts",
+  "owner": {
+    "name": "dodabuilt"
+  },
   "plugins": [
     {
       "name": "ibkr-engineering-skills",
-      "description": "Complete IBKR frontend development skill set - Ratio UI, semantic tokens, PrimeVue, Fluidity, TanStack Query, IBFonts",
+      "description": "Complete IBKR frontend development skill set - Ratio UI, semantic tokens, PrimeVue components, Fluidity microfrontends, TanStack Query, IBFonts",
       "version": "1.0.0",
-      "path": "."
+      "source": ".",
+      "category": "development"
     }
   ]
 }
