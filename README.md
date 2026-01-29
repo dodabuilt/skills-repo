@@ -1,6 +1,6 @@
-# IBKR Engineering Skills Plugin
+# IBKR Engineering Skills
 
-A Claude Code plugin with curated skills for IBKR frontend development. These skills constrain Claude to use **only** the approved design system, components, and patterns.
+A Claude Code plugin marketplace with curated skills for IBKR frontend development. These skills constrain Claude to use **only** the approved design system, components, and patterns.
 
 ## Skills Included
 
@@ -14,26 +14,22 @@ A Claude Code plugin with curated skills for IBKR frontend development. These sk
 
 ### Option 1: Add as Marketplace (Recommended)
 
-Add this repo as a marketplace, then install the plugin:
-
 ```bash
-# In Claude Code, run:
+# Add the marketplace
 /plugin marketplace add dodabuilt/skills-repo
 
-# Then install the plugin:
+# Install the plugin
 /plugin install ibkr-engineering-skills@dodabuilt-skills-repo
 ```
 
 ### Option 2: Local Development/Testing
-
-Clone and load directly with `--plugin-dir`:
 
 ```bash
 # Clone the repo
 git clone https://github.com/dodabuilt/skills-repo.git ~/skills-repo
 
 # Start Claude Code with the plugin loaded
-claude --plugin-dir ~/skills-repo
+claude --plugin-dir ~/skills-repo/plugins/ibkr-engineering-skills
 ```
 
 ### Option 3: Per-Project Configuration
@@ -108,41 +104,35 @@ Create a candlestick chart for AAPL with volume histogram
 ```bash
 # Update marketplace catalog
 /plugin marketplace update dodabuilt-skills-repo
-
-# Or if using local clone
-cd ~/skills-repo && git pull
 ```
 
-## Plugin Structure
+## Repository Structure
 
 ```
 skills-repo/
 ├── .claude-plugin/
-│   ├── plugin.json              # Plugin metadata
-│   └── marketplace.json         # Marketplace catalog
-├── skills/
-│   ├── ibkr-development/
-│   │   ├── SKILL.md             # Main skill instructions
-│   │   └── references/          # Supporting documentation
-│   │       ├── semantic-tokens.md
-│   │       ├── ratio-components.md
-│   │       ├── fluidity-patterns.md
-│   │       └── ibfonts.md
-│   ├── tanstack-query-vue/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── api.md
-│   └── lightweight-charts/
-│       ├── SKILL.md
-│       └── references/
-│           └── ...
+│   └── marketplace.json              # Marketplace catalog
+├── plugins/
+│   └── ibkr-engineering-skills/      # Plugin directory
+│       ├── .claude-plugin/
+│       │   └── plugin.json           # Plugin metadata
+│       └── skills/
+│           ├── ibkr-development/
+│           │   ├── SKILL.md
+│           │   └── references/
+│           ├── tanstack-query-vue/
+│           │   ├── SKILL.md
+│           │   └── references/
+│           └── lightweight-charts/
+│               ├── SKILL.md
+│               └── references/
 └── README.md
 ```
 
 ## Contributing
 
-1. Edit the relevant `SKILL.md` or reference files
-2. Test locally with `claude --plugin-dir ./skills-repo`
+1. Edit files in `plugins/ibkr-engineering-skills/skills/`
+2. Test locally with `claude --plugin-dir ./plugins/ibkr-engineering-skills`
 3. Submit a PR
 
 ## License
